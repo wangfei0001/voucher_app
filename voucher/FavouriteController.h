@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FavouriteController.h
 //  voucher
 //
 //  Created by fei wang on 13-8-22.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "BaseController.h"
+
+@interface FavouriteController : BaseController
 
 @end

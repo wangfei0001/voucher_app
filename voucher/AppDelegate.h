@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#import "AFHTTPClient.h"
+
+#import "AFJSONRequestOperation.h"
+
+#define DOMAIN_URL @"http://voucher/api/v1/"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+
+
+
 @property (strong, nonatomic) UIWindow *window;
+
+
 
 @end
