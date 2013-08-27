@@ -146,7 +146,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self showVoucherView];
+    //we need to fill the data
+    id voucherData = [data objectAtIndex:indexPath.row];
+    
+    NSLog(@"%@", voucherData);
+    
+    [self showVoucherView: voucherData];
 }
 
 

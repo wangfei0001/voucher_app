@@ -18,6 +18,6 @@
 
 @property (weak, nonatomic) VoucherView *voucherView;
 
-- (void)showVoucherView;
+- (void)showVoucherView: (id)data;
 
 @end
