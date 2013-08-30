@@ -15,12 +15,17 @@
 		9E999D2D17CA2F4C001F5BFD /* pos.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E999D2C17CA2F4C001F5BFD /* pos.jpeg */; };
 		9E999D3117CA2F90001F5BFD /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E999D2F17CA2F90001F5BFD /* MapController.m */; };
 		9E999D3417CA38BF001F5BFD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E999D3317CA38BF001F5BFD /* MapKit.framework */; };
+		9EA7F4C417CF50C900D7D003 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F4C317CF50C900D7D003 /* MapView.m */; };
+		9EA7F4C717CF6EC700D7D003 /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7F4C617CF6EC700D7D003 /* MapPin.m */; };
+		9EA7F4CD17CF85B600D7D003 /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7F4CC17CF85B600D7D003 /* map-pin.png */; };
+		9EA7F4CF17CF884E00D7D003 /* favourite.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7F4CE17CF884E00D7D003 /* favourite.png */; };
 		9EAA34BC17C8585D00C9DB1D /* selection-tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA34B817C8585D00C9DB1D /* selection-tab.png */; };
 		9EAA34BD17C8585D00C9DB1D /* selection-tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA34B917C8585D00C9DB1D /* selection-tab@2x.png */; };
 		9EAA34BE17C8585D00C9DB1D /* tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA34BA17C8585D00C9DB1D /* tabbar.png */; };
 		9EAA34BF17C8585D00C9DB1D /* tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA34BB17C8585D00C9DB1D /* tabbar@2x.png */; };
 		9EAA34C217C85B7300C9DB1D /* VoucherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA34C117C85B7300C9DB1D /* VoucherView.xib */; };
 		9EAA34C517C85B8500C9DB1D /* VoucherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA34C417C85B8500C9DB1D /* VoucherView.m */; };
+		9EAFAF1117D0A4D400642A86 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFAF1017D0A4D400642A86 /* Api.m */; };
 		9EBEEEAC17CCD5B500ACEB4D /* Voucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEEEAB17CCD5B500ACEB4D /* Voucher.m */; };
 		9EBFC80517C62F6E001D53FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBFC80417C62F6E001D53FD /* UIKit.framework */; };
 		9EBFC80717C62F6E001D53FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBFC80617C62F6E001D53FD /* Foundation.framework */; };
@@ -77,6 +82,12 @@
 		9E999D2E17CA2F90001F5BFD /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapController.h; sourceTree = "<group>"; };
 		9E999D2F17CA2F90001F5BFD /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapController.m; sourceTree = "<group>"; };
 		9E999D3317CA38BF001F5BFD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9EA7F4C217CF50C900D7D003 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		9EA7F4C317CF50C900D7D003 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		9EA7F4C517CF6EC700D7D003 /* MapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		9EA7F4C617CF6EC700D7D003 /* MapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
+		9EA7F4CC17CF85B600D7D003 /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin.png"; sourceTree = "<group>"; };
+		9EA7F4CE17CF884E00D7D003 /* favourite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favourite.png; sourceTree = "<group>"; };
 		9EAA34B817C8585D00C9DB1D /* selection-tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selection-tab.png"; sourceTree = "<group>"; };
 		9EAA34B917C8585D00C9DB1D /* selection-tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selection-tab@2x.png"; sourceTree = "<group>"; };
 		9EAA34BA17C8585D00C9DB1D /* tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar.png; sourceTree = "<group>"; };
@@ -84,6 +95,8 @@
 		9EAA34C117C85B7300C9DB1D /* VoucherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoucherView.xib; sourceTree = "<group>"; };
 		9EAA34C317C85B8500C9DB1D /* VoucherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherView.h; sourceTree = "<group>"; };
 		9EAA34C417C85B8500C9DB1D /* VoucherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherView.m; sourceTree = "<group>"; };
+		9EAFAF0F17D0A4D400642A86 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
+		9EAFAF1017D0A4D400642A86 /* Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.m; sourceTree = "<group>"; };
 		9EBEEEAA17CCD5B500ACEB4D /* Voucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Voucher.h; path = Models/Voucher.h; sourceTree = "<group>"; };
 		9EBEEEAB17CCD5B500ACEB4D /* Voucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Voucher.m; path = Models/Voucher.m; sourceTree = "<group>"; };
 		9EBFC80117C62F6E001D53FD /* voucher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voucher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +179,8 @@
 		9EAA34B717C8585D00C9DB1D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9EA7F4CE17CF884E00D7D003 /* favourite.png */,
+				9EA7F4CC17CF85B600D7D003 /* map-pin.png */,
 				9E999D2C17CA2F4C001F5BFD /* pos.jpeg */,
 				9E999D2A17C97E08001F5BFD /* voucher_bg.png */,
 				9E999D2817C96D38001F5BFD /* close.png */,
@@ -322,6 +337,8 @@
 				9E2673C817C794AC00EFE754 /* MainTable.m */,
 				9EAA34C317C85B8500C9DB1D /* VoucherView.h */,
 				9EAA34C417C85B8500C9DB1D /* VoucherView.m */,
+				9EA7F4C217CF50C900D7D003 /* MapView.h */,
+				9EA7F4C317CF50C900D7D003 /* MapView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -331,6 +348,10 @@
 			children = (
 				9EBEEEAA17CCD5B500ACEB4D /* Voucher.h */,
 				9EBEEEAB17CCD5B500ACEB4D /* Voucher.m */,
+				9EA7F4C517CF6EC700D7D003 /* MapPin.h */,
+				9EA7F4C617CF6EC700D7D003 /* MapPin.m */,
+				9EAFAF0F17D0A4D400642A86 /* Api.h */,
+				9EAFAF1017D0A4D400642A86 /* Api.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -420,6 +441,8 @@
 				9E999D2917C96D38001F5BFD /* close.png in Resources */,
 				9E999D2B17C97E08001F5BFD /* voucher_bg.png in Resources */,
 				9E999D2D17CA2F4C001F5BFD /* pos.jpeg in Resources */,
+				9EA7F4CD17CF85B600D7D003 /* map-pin.png in Resources */,
+				9EA7F4CF17CF884E00D7D003 /* favourite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +497,9 @@
 				9EAA34C517C85B8500C9DB1D /* VoucherView.m in Sources */,
 				9E999D3117CA2F90001F5BFD /* MapController.m in Sources */,
 				9EBEEEAC17CCD5B500ACEB4D /* Voucher.m in Sources */,
+				9EA7F4C417CF50C900D7D003 /* MapView.m in Sources */,
+				9EA7F4C717CF6EC700D7D003 /* MapPin.m in Sources */,
+				9EAFAF1117D0A4D400642A86 /* Api.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

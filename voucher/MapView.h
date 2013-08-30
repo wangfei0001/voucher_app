@@ -8,6 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapView : MKMapView
+#import <MapKit/MKMapView.h>
+
+#import <MapKit/MKUserLocation.h>
+
+@protocol mapViewDelegate<NSObject>
+
+-(void)voucherOnMapViewClick:(id)sender;
+
+@end
+
+@interface MapView : MKMapView<MKMapViewDelegate>
+
+- (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate
+                  zoomLevel:(NSUInteger)zoomLevel
+                   animated:(BOOL)animated;
+
+@property (nonatomic, assign) id<mapViewDelegate> mydelegate;
+
+
+@property (nonatomic, assign) int zoomLevel;
 
 @end

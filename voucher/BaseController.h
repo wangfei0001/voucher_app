@@ -12,6 +12,8 @@
 
 #import "VoucherView.h"
 
+#import "Api.h"
+
 @interface BaseController : UIViewController<voucherViewDelegate>
 
 @property (nonatomic, weak) AppDelegate *appDelegate;

@@ -10,4 +10,18 @@
 
 @implementation MapPin
 
+@synthesize coordinate,title,subtitle;
+@synthesize nTag;
+
+- (id)initWithLocation: (CLLocationCoordinate2D)coord
+{
+    self = [super init];
+    if (self) {
+        coordinate = coord;
+    }
+    return self;
+}
+
+
+
 @end

@@ -62,60 +62,15 @@
     
     self.voucherView.voucherTitle.text = [data objectForKey:@"name"];
     
-    //get additional data
-    NSURL *url = [NSURL URLWithString:DOMAIN_URL];
     
-    
-    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
-    
-//    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-//                            @"17", @"id_voucher",
-//                            nil];
-    NSString *path = [NSString stringWithFormat:@"voucher/%d", [[data objectForKey:@"id_voucher"] intValue]];
-    
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET" path:path parameters:nil];
-    
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
-        success:^(NSURLRequest *request , NSURLResponse *response , id json) {
-            
-            NSLog(@"%@", json);
-            
-            BOOL status = [[json valueForKey:@"status"] boolValue];
-            if (status) {
-                //now we can refresh the content
-                
-                voucher = [[Voucher alloc] initWithData:[json valueForKey:@"data"]];
-                
-                //update UI
-                if(!voucher.reusable){
-                    self.voucherView.redeemBut.hidden = NO;
-                }
-            }
-            else {
-                UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Login Unsuccessful"
-                                                               message:@"Please try again"
-                                                              delegate:NULL
-                                                     cancelButtonTitle:@"OK"
-                                                     otherButtonTitles:NULL];
-                
-                [alert show];
-                
-            }
-            
-        }
-
-        failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON) {
-            
-            NSLog(@"%@", error);
-            UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Login Unsuccessful"
-                                                           message:@"There was a problem connecting to the network!"
-                                                          delegate:NULL
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:NULL];
-            
-            [alert show];
-        }];
-    [operation start];
+    [Api getVoucherDetail:[[data objectForKey:@"id_voucher"] intValue]
+                  success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+                      voucher = [[Voucher alloc] initWithData:JSON];
+                      //update UI
+                      if(!voucher.reusable){
+                          self.voucherView.redeemBut.hidden = NO;
+                      }
+                  }];
 }
 
 - (void)showVoucherView: (id)data
