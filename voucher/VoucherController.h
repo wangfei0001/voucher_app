@@ -12,11 +12,12 @@
 
 #import "MapView.h"
 
-@interface VoucherController : BaseController<mapViewDelegate>
+@interface VoucherController : BaseController<mapViewDelegate, voucherViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTable;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segementCtrl;
+
 
 @property (strong, nonatomic) IBOutlet MapView *mapView;
 

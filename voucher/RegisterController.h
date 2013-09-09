@@ -10,4 +10,11 @@
 
 @interface RegisterController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *registerTable;
+
+//@property (weak, nonatomic) IBOutlet UITextField *usernameTxt;
+//
+//@property (weak, nonatomic) IBOutlet UITextField *passwordTxt;
+
+
 @end

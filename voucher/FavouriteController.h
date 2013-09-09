@@ -10,6 +10,8 @@
 
 #import "BaseController.h"
 
-@interface FavouriteController : BaseController
+@interface FavouriteController : BaseController<voucherViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *mainTable;
 
 @end

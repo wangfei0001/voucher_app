@@ -10,9 +10,11 @@
 
 @protocol voucherViewDelegate<NSObject>
 
--(void)showMerchantOnMapClick:(id)sender;
+-(void)showMerchantOnMapClick: (id)sender;
 
--(void)movingVoucherViewDone;
+-(void)redeemVoucherClick: (id)sender;
+
+//-(void)movingVoucherViewDone;
 
 @end
 

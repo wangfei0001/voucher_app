@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "KeychainItemWrapper.h"
+
 @implementation AppDelegate
 
 
@@ -33,6 +35,11 @@
 {
     
     
+    
+    
+    [Session loadCredentials];
+    
+
     // Override point for customization after application launch.
     
 //    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -80,5 +87,22 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+- (void)ShowLoading: (UIView *)view
+{
+    if(self.HUD != nil) [self HideLoading];
+    
+    self.HUD = [[MBProgressHUD alloc] initWithView:view];
+    [view addSubview:self.HUD];
+    [self.HUD show:YES];
+}
+
+- (void)HideLoading
+{
+    [self.HUD removeFromSuperview];
+    self.HUD = nil;
+}
+
 
 @end

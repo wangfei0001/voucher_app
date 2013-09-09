@@ -81,7 +81,7 @@
     
     self.voucherView = (VoucherView *)[[[NSBundle mainBundle] loadNibNamed:@"VoucherView" owner:self options:nil] objectAtIndex:0];
     
-    self.voucherView.delegate = self;
+    
     
     CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
 
@@ -95,7 +95,7 @@
     
 
     //[[self.appDelegate window] addSubview:self.voucherView];
-    [self.navigationController.view addSubview:self.voucherView];
+    [self.tabBarController.view addSubview:self.voucherView];
     
     [UIView animateWithDuration:0.3f
                           delay:0.0f
@@ -113,16 +113,5 @@
 
 #pragma Voucher View delegate 
 
-- (void)showMerchantOnMapClick:(id)sender
-{
-    [self performSegueWithIdentifier:@"ShowMerchantOnMap" sender:self];
-    
-}
-
-
-- (void)movingVoucherViewDone
-{
-    
-}
 
 @end

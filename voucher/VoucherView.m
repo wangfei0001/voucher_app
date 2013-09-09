@@ -83,4 +83,11 @@
                      }];
 }
 
+
+- (IBAction)redeemClick:(id)sender
+{
+    [self.delegate redeemVoucherClick:sender];
+}
+
+
 @end

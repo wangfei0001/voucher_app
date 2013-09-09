@@ -16,6 +16,10 @@
 @interface VoucherController (){
     
     NSMutableArray *data;     //voucher data
+    
+    id selectedVoucher;
+    
+    UIRefreshControl *refreshControl;
 
 }
 
@@ -57,15 +61,25 @@
     
     [self initMapView];
     
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor grayColor];
+    [refreshControl addTarget:self action:@selector(refreshLatestVouchers) forControlEvents:UIControlEventValueChanged];
+    [self.mainTable addSubview:refreshControl];
+    
         
     data = [[NSMutableArray alloc] initWithCapacity:0];
     
     [Api getVouchers:nil success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+        //update the voucher views
         for(id val in JSON){
             [data addObject:val];
         }
         
         [self.mainTable reloadData];
+        
+        //update the mapviews
+        [self updateMapView];
     }];
 
 }
@@ -77,7 +91,7 @@
 }
 
 
-#pragma Table View Start
+#pragma mark - Table View Start
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -112,16 +126,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //we need to fill the data
-    id voucherData = [data objectAtIndex:indexPath.row];
+    selectedVoucher = [data objectAtIndex:indexPath.row];
+
     
-    NSLog(@"%@", voucherData);
+    [self showVoucherView: selectedVoucher];
     
-    [self showVoucherView: voucherData];
+    self.voucherView.delegate = self;
 }
 
-#define GEORGIA_TECH_LATITUDE -33.831567
-#define GEORGIA_TECH_LONGITUDE 151.222472
-
+#pragma mark - Some event handle functions
+/***
+ *  Segement Click Event handle function
+ *
+ **/
 - (IBAction)segementAction:(id)sender
 {
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
@@ -153,14 +170,36 @@
                                 
                             } completion:nil];
             
-    
-            
             break;
         }
     }
     
     
 
+}
+
+
+- (void)updateMapView
+{
+    CLLocationCoordinate2D location;
+    
+    for (int i = 0; i<[data count]; i++)
+    {
+        id merchant = [[data objectAtIndex:i] objectForKey:@"merchant"];
+        double double_lat = [[merchant valueForKey:@"lat"] doubleValue];
+        double double_long = [[merchant valueForKey:@"lng"] doubleValue];
+        location.latitude = double_lat;
+        location.longitude = double_long;
+        
+        MapPin *mapPoint = [[MapPin alloc] initWithLocation:location];
+        mapPoint.title = [[data objectAtIndex:i] objectForKey:@"name"];
+        mapPoint.subtitle = [merchant valueForKey:@"company"];
+        mapPoint.nTag = i;
+        
+        [self.mapView addAnnotation:mapPoint];
+        
+    }
+    
 }
 
 - (void)initMapView
@@ -172,43 +211,10 @@
     [self.mapView setHidden:YES];
     self.mapView.delegate = self.mapView;
     self.mapView.mydelegate = self;
-    [self.mapView setMapType:MKMapTypeStandard];
+    //[self.mapView setMapType:MKMapTypeStandard];
     [self.view addSubview:self.mapView];
     
-    ////////////////////////////
-    NSMutableArray *arrLat=[[NSMutableArray alloc] initWithObjects:@"-33.834704 ",@"-33.833350",nil];
-    NSMutableArray *arrLong=[[NSMutableArray alloc] initWithObjects:@"151.219897",@"151.222751", nil];
-    
-    NSMutableArray *Arr_Latitude=[[NSMutableArray alloc] init];
-    for(int i=0; i<[arrLat count];i++)
-    {
-        NSMutableDictionary *dictLatlong=[[NSMutableDictionary alloc] init];
-        [dictLatlong setObject:[arrLat objectAtIndex:i] forKey:@"Latitude"];
-        [dictLatlong setObject:[arrLong objectAtIndex:i] forKey:@"Longitude"];
-        [Arr_Latitude addObject:dictLatlong];
-        
-    }
-    NSLog(@"--------------- %@",[Arr_Latitude description]);
-    
-    CLLocationCoordinate2D location; 
-    
-    for (int i = 0; i<[Arr_Latitude count]; i++)
-    {
-        double double_lat = [[[Arr_Latitude objectAtIndex:i]valueForKey:@"Latitude"] doubleValue];
-        double double_long = [[[Arr_Latitude objectAtIndex:i]valueForKey:@"Longitude"] doubleValue];
-        location.latitude = double_lat;
-        location.longitude = double_long;
-        
-        MapPin *mapPoint = [[MapPin alloc] initWithLocation:location];
-        mapPoint.title = @"haha";
-        mapPoint.subtitle = @"ok";
-        mapPoint.nTag = i;
-                
-        [self.mapView addAnnotation:mapPoint];
 
-    }
-    
-    
 }
 
 
@@ -226,6 +232,8 @@
 }
 
 
+#pragma mark - Voucher View Delegate
+
 -(void)voucherOnMapViewClick:(id)sender
 {
     NSLog(@"click on map");
@@ -235,6 +243,39 @@
     NSLog(@"%@", voucherData);
     
     [self showVoucherView: voucherData];
+    
+    self.voucherView.delegate = self;
+}
+
+- (void)showMerchantOnMapClick:(id)sender
+{
+    [self performSegueWithIdentifier:@"ShowMerchantOnMap" sender:self];
+}
+
+
+- (void)redeemVoucherClick:(id)sender
+{
+    NSLog(@"%@", selectedVoucher);
+}
+
+
+#pragma mark - For table pull refresh control
+/***
+ *  Pull table view to refresh
+ *
+ **/
+
+- (void)refreshLatestVouchers
+{
+    
+    [self performSelector:@selector(refreshLatestVouchersDone) withObject:nil
+               afterDelay:5];
+}
+
+
+- (void)refreshLatestVouchersDone
+{
+     [refreshControl endRefreshing];
 }
 
 @end

@@ -14,5 +14,16 @@
             success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 + (void)getVoucherDetail: (int)voucherId
                  success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
++ (void)redeemVoucher: (int)voucherId
+                 uuid: (NSString *)uuid;
++ (void)getMyFavouriteVouchers: (NSDictionary *)params
+                       success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
+
++ (void)login: (NSString *)username
+                password: (NSString *)password
+                success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
++ (void)logout: (void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 
 @end

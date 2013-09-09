@@ -8,6 +8,8 @@
 
 #import "DefaultController.h"
 
+#import "AppDelegate.h"
+
 @interface DefaultController ()
 
 @end
@@ -21,6 +23,24 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    
+    UIViewController *vc;
+    
+    if([Session isLogged])
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"MainTabController"];
+    else
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    
+    
+    [vc setModalPresentationStyle:UIModalPresentationFullScreen];
+
+    [self presentViewController:vc animated:NO completion:nil];
+    
 }
 
 - (void)viewDidLoad

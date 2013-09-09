@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+//    [self.navigationController.navigationBar setHidden:YES];
+    
+//    [self performSegueWithIdentifier:@"ShowLogin" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

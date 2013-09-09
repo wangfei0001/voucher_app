@@ -10,4 +10,7 @@
 
 @interface LoginController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *loginTable;
+
+
 @end
