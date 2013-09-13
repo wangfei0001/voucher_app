@@ -70,6 +70,7 @@
 		9ECE26AD17DDEDC100FE735B /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AC17DDEDC100FE735B /* AccountController.m */; };
 		9ECE26B017DDF05F00FE735B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AF17DDF05F00FE735B /* MBProgressHUD.m */; };
 		9EDD2C2A17DB49B900448616 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD2C2917DB49B900448616 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9EE7FA4717E3D2FE00AB020A /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7FA4617E3D2FE00AB020A /* Address.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,8 @@
 		9ECE26AF17DDF05F00FE735B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		9EDD2C2817DB49B900448616 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		9EDD2C2917DB49B900448616 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		9EE7FA4517E3D2FE00AB020A /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		9EE7FA4617E3D2FE00AB020A /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +416,8 @@
 				9ECE26A917DDE46C00FE735B /* Session.m */,
 				9E17D8DD17E35F9E00F25F31 /* Merchant.h */,
 				9E17D8DE17E35F9E00F25F31 /* Merchant.m */,
+				9EE7FA4517E3D2FE00AB020A /* Address.h */,
+				9EE7FA4617E3D2FE00AB020A /* Address.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -572,6 +577,7 @@
 				9ECE26AD17DDEDC100FE735B /* AccountController.m in Sources */,
 				9ECE26B017DDF05F00FE735B /* MBProgressHUD.m in Sources */,
 				9E17D8DF17E35F9E00F25F31 /* Merchant.m in Sources */,
+				9EE7FA4717E3D2FE00AB020A /* Address.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

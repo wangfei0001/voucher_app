@@ -17,8 +17,14 @@
         self.id_merchant = [[data objectForKey:@"id_merchant"] intValue];
         self.company = [data objectForKey:@"company"];
         self.logo = [data objectForKey:@"logo"];
-        self.lat = [[data objectForKey:@"lat"] floatValue];
-        self.lng = [[data objectForKey:@"lng"] floatValue];
+        //address
+        self.addresses = [[NSMutableArray alloc] initWithCapacity:0];
+        id addresses = [data objectForKey:@"address"];
+        for(int i = 0; i < [addresses count]; i++){
+            Address *address = [[Address alloc] initWithData:[addresses objectAtIndex:i]];
+            [self.addresses addObject:address];
+        }
+        
     }
     return self;
 }

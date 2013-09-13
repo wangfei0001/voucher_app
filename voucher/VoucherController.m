@@ -185,17 +185,26 @@
     for (int i = 0; i<[data count]; i++)
     {
         id merchant = [[data objectAtIndex:i] objectForKey:@"merchant"];
-        double double_lat = [[merchant valueForKey:@"lat"] doubleValue];
-        double double_long = [[merchant valueForKey:@"lng"] doubleValue];
-        location.latitude = double_lat;
-        location.longitude = double_long;
         
-        MapPin *mapPoint = [[MapPin alloc] initWithLocation:location];
-        mapPoint.title = [[data objectAtIndex:i] objectForKey:@"name"];
-        mapPoint.subtitle = [merchant valueForKey:@"company"];
-        mapPoint.nTag = i;
+        id addresses = [merchant objectForKey:@"address"];
         
-        [self.mapView addAnnotation:mapPoint];
+        //we support multiple stores
+        for(int j = 0; j < [addresses count]; j++){
+            id address = [addresses objectAtIndex:j];
+            
+            double double_lat = [[address valueForKey:@"lat"] doubleValue];
+            double double_long = [[address valueForKey:@"lng"] doubleValue];
+            location.latitude = double_lat;
+            location.longitude = double_long;
+            
+            MapPin *mapPoint = [[MapPin alloc] initWithLocation:location];
+            mapPoint.title = [[data objectAtIndex:i] objectForKey:@"name"];
+            mapPoint.subtitle = [merchant valueForKey:@"company"];
+            mapPoint.nTag = i;
+            
+            [self.mapView addAnnotation:mapPoint];
+            
+        }
         
     }
     

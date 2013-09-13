@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Address.h"
+
 @interface Merchant : NSObject
 
 
-@property (assign, nonatomic) float lat;
-
-@property (assign, nonatomic) float lng;
 
 @property (strong, nonatomic) NSString *company;
 
 @property (strong, nonatomic) NSString *logo;
 
 @property (assign, nonatomic) int id_merchant;
+
+
+@property (retain, nonatomic) NSMutableArray *addresses;
 
 - (id)initWithData: (id)data;
 

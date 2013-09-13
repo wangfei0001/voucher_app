@@ -167,7 +167,8 @@
     {
         MapController *vc = [segue destinationViewController];
         
-        vc.startCoord = CLLocationCoordinate2DMake( voucher.merchant.lat , voucher.merchant.lng );
+        
+        vc.startCoord = [[voucher.merchant.addresses objectAtIndex:0] getCoordinate2D];
     }
 }
 
