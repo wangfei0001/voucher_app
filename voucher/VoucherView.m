@@ -10,7 +10,11 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+
 @implementation VoucherView
+
+
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -37,6 +41,10 @@
         layer.shadowRadius = 5.0f;
         layer.shadowOpacity = 0.40f;
         layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
+        
+
+        
+        
     }
     return self;
 }
@@ -65,6 +73,10 @@
     }else if(touch.view == self.showMapView){      //inner view
         
         [self.delegate showMerchantOnMapClick:self];
+    }else if(touch.view == self.favouriteButton){
+        
+        [self.delegate favouriteClick:self];
+        
     }
 }
 
@@ -89,5 +101,10 @@
     [self.delegate redeemVoucherClick:sender];
 }
 
+
+- (void)updateView: (BOOL)favourite
+{
+    self.favouriteButton.image = [UIImage imageNamed:(favourite?@"favourite.png":@"favourite_dis.png")];
+}
 
 @end

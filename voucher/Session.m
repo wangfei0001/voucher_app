@@ -16,7 +16,10 @@ static NSString *public_key;
 
 static NSString *private_key;
 
-+ (BOOL)saveCredentials: (NSString *)pub_key pri_key:(NSString *)pri_key
+static int userid;
+
+
++ (BOOL)saveCredentials: (NSString *)pub_key pri_key:(NSString *)pri_key userid: (int)userid
 {
     KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:nil];
     
@@ -25,6 +28,7 @@ static NSString *private_key;
     }else{
         [keychainItem setObject:pub_key forKey:(__bridge id)(kSecAttrAccount)];
         [keychainItem setObject:pri_key forKey: (__bridge id)kSecValueData];
+        [keychainItem setObject:[NSNumber numberWithInt:userid] forKey: (__bridge id)kSecAttrService];
     }
     
     public_key = pub_key;
@@ -46,7 +50,14 @@ static NSString *private_key;
     id pri = [keychainItem objectForKey:(__bridge id)kSecValueData];
     
     private_key = (NSString *)pri;
+    
     NSLog(@"pri key :%@", (NSString *)pri);
+    
+    id user_id = [keychainItem objectForKey:(__bridge id)kSecAttrService];
+    
+    userid = [user_id intValue];
+    
+    NSLog(@"userid :%d", userid);
 }
 
 + (BOOL)isLogged
@@ -66,6 +77,11 @@ static NSString *private_key;
 + (NSString *)privateKey
 {
     return private_key;
+}
+
++ (int)userid
+{
+    return userid;
 }
 
 @end

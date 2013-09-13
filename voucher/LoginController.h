@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginController : UIViewController
+@interface LoginController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *loginTable;
 

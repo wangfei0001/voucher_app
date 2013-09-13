@@ -44,11 +44,15 @@
     
     [Api getMyFavouriteVouchers:nil success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
         //update the voucher views
-        for(id val in JSON){
-            [data addObject:val];
+        if(JSON != [NSNull null]){
+            for(id val in JSON){
+                [data addObject:val];
+            }
+            
+            [self.mainTable reloadData];
+        }else{
+            
         }
-        
-        [self.mainTable reloadData];
     }];
 }
 
@@ -95,7 +99,6 @@
 {
     //we need to fill the data
     selectedVoucher = [data objectAtIndex:indexPath.row];
-    
     
     [self showVoucherView: selectedVoucher];
     

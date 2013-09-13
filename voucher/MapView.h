@@ -24,6 +24,9 @@
                   zoomLevel:(NSUInteger)zoomLevel
                    animated:(BOOL)animated;
 
+//- (void)setLocation: (CLLocationCoordinate2D) startCoord;
+
+
 @property (nonatomic, assign) id<mapViewDelegate> mydelegate;
 
 

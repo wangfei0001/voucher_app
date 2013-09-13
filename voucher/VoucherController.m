@@ -127,7 +127,6 @@
 {
     //we need to fill the data
     selectedVoucher = [data objectAtIndex:indexPath.row];
-
     
     [self showVoucherView: selectedVoucher];
     
@@ -213,8 +212,6 @@
     self.mapView.mydelegate = self;
     //[self.mapView setMapType:MKMapTypeStandard];
     [self.view addSubview:self.mapView];
-    
-
 }
 
 
@@ -247,16 +244,6 @@
     self.voucherView.delegate = self;
 }
 
-- (void)showMerchantOnMapClick:(id)sender
-{
-    [self performSegueWithIdentifier:@"ShowMerchantOnMap" sender:self];
-}
-
-
-- (void)redeemVoucherClick:(id)sender
-{
-    NSLog(@"%@", selectedVoucher);
-}
 
 
 #pragma mark - For table pull refresh control

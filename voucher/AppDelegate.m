@@ -104,5 +104,14 @@
     self.HUD = nil;
 }
 
+- (void)showAlert: (NSString *)message
+{
+    UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"出错啦"
+                                                   message:message
+                                                  delegate:NULL
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:NULL];
 
+    [alert show];
+}
 @end

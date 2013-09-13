@@ -35,7 +35,18 @@
     }
     self.termCondition = [data objectForKey:@"term_condition"];
     self.endTime = [data objectForKey:@"end_time"];
+    
+    self.id_favourite = [[data objectForKey:@"id_favourite"] intValue];
+    
+    if([data objectForKey:@"merchant"]){
+        self.merchant = [[Merchant alloc] initWithData:[data objectForKey:@"merchant"]];
+    }
 }
 
+
+- (BOOL)isMyFavourite
+{
+    return self.id_favourite > 0 ? YES : NO;
+}
 
 @end

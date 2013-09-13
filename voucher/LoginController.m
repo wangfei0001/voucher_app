@@ -48,12 +48,20 @@
     [self.navigationController.navigationBar setHidden:NO];
     self.loginTable.backgroundColor = [UIColor clearColor];
     self.loginTable.backgroundView = nil;
+
+
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];// this will do the trick
 }
 
 - (IBAction)loginClick:(id)sender {
@@ -65,13 +73,9 @@
 //    
 //    [self presentViewController:vc animated:NO completion:nil];
     
-    UITableViewCell *usernameCell = [self getTableCell: 0];
+    UITextField* usernameField = (UITextField*)[[self getTableCell: 0] viewWithTag:TEXTFIELD_USERNAME_TAG];
     
-    UITableViewCell *passwordCell = [self getTableCell: 1];
-    
-    UITextField* usernameField = (UITextField*)[usernameCell viewWithTag:TEXTFIELD_USERNAME_TAG];
-    
-    UITextField* passwordField = (UITextField*)[passwordCell  viewWithTag:TEXTFIELD_PASSWORD_TAG];
+    UITextField* passwordField = (UITextField*)[[self getTableCell: 1] viewWithTag:TEXTFIELD_PASSWORD_TAG];
 
     [appDelegate ShowLoading:self.view];
     
@@ -81,7 +85,10 @@
         
         NSLog(@"%@", JSON);
         
-        [Session saveCredentials:[JSON objectForKey:@"public_key"] pri_key:[JSON objectForKey:@"private_key"]];;
+        [Session saveCredentials:[JSON objectForKey:@"public_key"]
+                         pri_key:[JSON objectForKey:@"private_key"]
+                          userid:[[JSON objectForKey:@"id_user"] intValue]
+         ];
         
         [appDelegate HideLoading];
         
@@ -95,6 +102,15 @@
     [self performSegueWithIdentifier:@"ShowRegister" sender:self];
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [textField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
+}
+
 #pragma mark - Table View Start
 
 
@@ -102,10 +118,14 @@
     
     static NSString *CellIdentifier;
     
+    int tag;
+    
     if(indexPath.row == 0){
         CellIdentifier = @"TbCellUser";
+        tag = TEXTFIELD_USERNAME_TAG;
     }else{
         CellIdentifier = @"TbCellPwd";
+        tag = TEXTFIELD_PASSWORD_TAG;
     }
     
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -113,6 +133,10 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    UITextField *textField = (UITextField *)[cell viewWithTag:tag];
+        
+    textField.delegate = self;
     
     return cell;
 }

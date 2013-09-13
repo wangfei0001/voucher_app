@@ -12,12 +12,14 @@
 
 + (void)loadCredentials;
 
-+ (BOOL)saveCredentials: (NSString *)pub_key pri_key:(NSString *)pri_key;
++ (BOOL)saveCredentials: (NSString *)pub_key pri_key:(NSString *)pri_key userid: (int)userid;
 
 + (BOOL)isLogged;
 
 + (NSString *)publicKey;
 
 + (NSString *)privateKey;
+
++ (int)userid;
 
 @end

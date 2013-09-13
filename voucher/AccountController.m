@@ -54,7 +54,7 @@
     [appDelegate ShowLoading:self.view];
     
     [Api logout:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
-        [Session saveCredentials:nil pri_key:nil];
+        [Session saveCredentials:nil pri_key:nil userid:0];
         
         [appDelegate HideLoading];
         

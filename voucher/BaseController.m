@@ -8,6 +8,8 @@
 
 #import "BaseController.h"
 
+#import "MapController.h"
+
 #import "Voucher.h"
 
 @interface BaseController (){
@@ -38,7 +40,7 @@
     
     //self.view.backgroundColor = [UIColor redColor];
     
-    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.appDelegate = APP_DELEGATE;
     
     voucherViewMoving = NO;
 
@@ -56,6 +58,8 @@
 */
 - (void)fillData: (id)data
 {
+    voucher = [[Voucher alloc] initWithData:data];
+    
     id merchant = [data objectForKey:@"merchant"];
     
     self.voucherView.merchantName.text = [merchant objectForKey:@"company"];
@@ -63,15 +67,29 @@
     self.voucherView.voucherTitle.text = [data objectForKey:@"name"];
     
     
+    /*
+     * 更新是否属于收藏
+     */
+    id id_favourite = [data objectForKey:@"id_favourite"];
+    if(id_favourite && [id_favourite boolValue] == YES){
+        [self.voucherView updateView:YES];
+    }
+    
     [Api getVoucherDetail:[[data objectForKey:@"id_voucher"] intValue]
                   success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
-                      voucher = [[Voucher alloc] initWithData:JSON];
+                      
                       //update UI
                       if(!voucher.reusable){
                           self.voucherView.redeemBut.hidden = NO;
                       }
                   }];
 }
+
+
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    NSLog(@"");
+//}
 
 - (void)showVoucherView: (id)data
 {
@@ -112,6 +130,46 @@
 
 
 #pragma Voucher View delegate 
+
+-(void)favouriteClick: (id)sender
+{
+
+    [self.appDelegate ShowLoading:self.voucherView];
+    if(![voucher isMyFavourite]){
+        [Api addFavouriteVocher:voucher.id success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+            voucher.id_favourite = [JSON intValue];
+            [self.voucherView updateView:YES];
+            [self.appDelegate HideLoading];
+        }];
+    }else{
+        [Api removeFavouriteVocher:voucher.id_favourite success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+            voucher.id_favourite = 0;
+            [self.voucherView updateView:NO];
+            [self.appDelegate HideLoading];
+        }];
+    }
+}
+
+- (void)showMerchantOnMapClick:(id)sender
+{
+    [self performSegueWithIdentifier:@"ShowMerchantOnMap" sender:self];
+}
+
+- (void)redeemVoucherClick:(id)sender
+{
+    NSLog(@"test");
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowMerchantOnMap"])
+    {
+        MapController *vc = [segue destinationViewController];
+        
+        vc.startCoord = CLLocationCoordinate2DMake( voucher.merchant.lat , voucher.merchant.lng );
+    }
+}
 
 
 @end

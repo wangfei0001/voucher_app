@@ -19,11 +19,22 @@
 + (void)getMyFavouriteVouchers: (NSDictionary *)params
                        success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 
++ (void)addFavouriteVocher: (int)voucherId
+                 success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
++ (void)removeFavouriteVocher: (int)id_favourite
+                   success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
 
 + (void)login: (NSString *)username
                 password: (NSString *)password
                 success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 
 + (void)logout: (void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
++ (void)signup: (NSString *)username
+        email: (NSString *)email
+        password: (NSString *)password
+        success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 
 @end

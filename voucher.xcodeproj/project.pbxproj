@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E17D8DC17E3532200F25F31 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E17D8DB17E3532200F25F31 /* CoreLocation.framework */; };
+		9E17D8DF17E35F9E00F25F31 /* Merchant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E17D8DE17E35F9E00F25F31 /* Merchant.m */; };
 		9E2673C317C7548900EFE754 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2673C217C7548900EFE754 /* BaseController.m */; };
 		9E2673C617C7583C00EFE754 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2673C517C7583C00EFE754 /* NavigationController.m */; };
 		9E2673C917C794AC00EFE754 /* MainTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2673C817C794AC00EFE754 /* MainTable.m */; };
@@ -63,6 +65,7 @@
 		9EBFC86617C63412001D53FD /* FavouriteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFC86517C63412001D53FD /* FavouriteController.m */; };
 		9EBFC86817C63970001D53FD /* VoucherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBFC86717C63970001D53FD /* VoucherCell.xib */; };
 		9EBFC86D17C639BD001D53FD /* VoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFC86C17C639BD001D53FD /* VoucherCell.m */; };
+		9EC3D7AE17E31D540083FCF2 /* favourite_dis.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3D7AD17E31D540083FCF2 /* favourite_dis.png */; };
 		9ECE26AA17DDE46C00FE735B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26A917DDE46C00FE735B /* Session.m */; };
 		9ECE26AD17DDEDC100FE735B /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AC17DDEDC100FE735B /* AccountController.m */; };
 		9ECE26B017DDF05F00FE735B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AF17DDF05F00FE735B /* MBProgressHUD.m */; };
@@ -80,6 +83,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E17D8DB17E3532200F25F31 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9E17D8DD17E35F9E00F25F31 /* Merchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Merchant.h; sourceTree = "<group>"; };
+		9E17D8DE17E35F9E00F25F31 /* Merchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Merchant.m; sourceTree = "<group>"; };
 		9E2673C117C7548900EFE754 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
 		9E2673C217C7548900EFE754 /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
 		9E2673C417C7583C00EFE754 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 		9EBFC86717C63970001D53FD /* VoucherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoucherCell.xib; sourceTree = "<group>"; };
 		9EBFC86B17C639BD001D53FD /* VoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherCell.h; sourceTree = "<group>"; };
 		9EBFC86C17C639BD001D53FD /* VoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherCell.m; sourceTree = "<group>"; };
+		9EC3D7AD17E31D540083FCF2 /* favourite_dis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favourite_dis.png; sourceTree = "<group>"; };
 		9ECE26A817DDE46C00FE735B /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		9ECE26A917DDE46C00FE735B /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		9ECE26AB17DDEDC100FE735B /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountController.h; sourceTree = "<group>"; };
@@ -183,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E17D8DC17E3532200F25F31 /* CoreLocation.framework in Frameworks */,
 				9EB5C87517D4BD8E00EA3838 /* Security.framework in Frameworks */,
 				9E999D3417CA38BF001F5BFD /* MapKit.framework in Frameworks */,
 				9EBFC85F17C63117001D53FD /* MobileCoreServices.framework in Frameworks */,
@@ -209,6 +217,7 @@
 		9EAA34B717C8585D00C9DB1D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9EC3D7AD17E31D540083FCF2 /* favourite_dis.png */,
 				9EA7F4CE17CF884E00D7D003 /* favourite.png */,
 				9EA7F4CC17CF85B600D7D003 /* map-pin.png */,
 				9E999D2C17CA2F4C001F5BFD /* pos.jpeg */,
@@ -234,6 +243,7 @@
 		9EBFC7F817C62F6E001D53FD = {
 			isa = PBXGroup;
 			children = (
+				9E17D8DB17E3532200F25F31 /* CoreLocation.framework */,
 				9EB5C87417D4BD8E00EA3838 /* Security.framework */,
 				9E999D3317CA38BF001F5BFD /* MapKit.framework */,
 				9EBFC85E17C63117001D53FD /* MobileCoreServices.framework */,
@@ -401,6 +411,8 @@
 				9EAFAF1017D0A4D400642A86 /* Api.m */,
 				9ECE26A817DDE46C00FE735B /* Session.h */,
 				9ECE26A917DDE46C00FE735B /* Session.m */,
+				9E17D8DD17E35F9E00F25F31 /* Merchant.h */,
+				9E17D8DE17E35F9E00F25F31 /* Merchant.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -492,6 +504,7 @@
 				9E999D2D17CA2F4C001F5BFD /* pos.jpeg in Resources */,
 				9EA7F4CD17CF85B600D7D003 /* map-pin.png in Resources */,
 				9EA7F4CF17CF884E00D7D003 /* favourite.png in Resources */,
+				9EC3D7AE17E31D540083FCF2 /* favourite_dis.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +571,7 @@
 				9ECE26AA17DDE46C00FE735B /* Session.m in Sources */,
 				9ECE26AD17DDEDC100FE735B /* AccountController.m in Sources */,
 				9ECE26B017DDF05F00FE735B /* MBProgressHUD.m in Sources */,
+				9E17D8DF17E35F9E00F25F31 /* Merchant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

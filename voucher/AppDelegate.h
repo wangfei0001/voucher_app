@@ -28,4 +28,6 @@
 
 - (void)HideLoading;
 
+- (void)showAlert: (NSString *)message;
+
 @end

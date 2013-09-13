@@ -14,7 +14,7 @@
 
 -(void)redeemVoucherClick: (id)sender;
 
-//-(void)movingVoucherViewDone;
+-(void)favouriteClick: (id)sender;
 
 @end
 
@@ -34,7 +34,11 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *redeemBut;
 
+@property (weak, nonatomic) IBOutlet UIImageView *favouriteButton;
+
+
 @property (nonatomic, assign) id<voucherViewDelegate> delegate;
 
+- (void)updateView: (BOOL)favourite;
 
 @end

@@ -12,7 +12,7 @@
 
 #import "MapView.h"
 
-@interface VoucherController : BaseController<mapViewDelegate, voucherViewDelegate>
+@interface VoucherController : BaseController<mapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTable;
 

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Merchant.h"
+
 @interface Voucher : NSObject
 
 @property (assign, nonatomic) int id;
@@ -26,8 +28,18 @@
 
 @property (strong, nonatomic) NSString *endTime;
 
+@property (retain, nonatomic) Merchant *merchant;
+
+
+/*
+ * 虚拟属性
+ */
+@property (assign, nonatomic) int id_favourite;
+
 - (id)initWithData: (id)data;
 
 - (void)loadData: (id)data;
+
+- (BOOL)isMyFavourite;
 
 @end

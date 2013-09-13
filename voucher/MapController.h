@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MapView.h"
+
 @interface MapController : UIViewController
 
+@property (weak, nonatomic) IBOutlet MapView *mapView;
+
+@property (assign, nonatomic) CLLocationCoordinate2D startCoord;
 
 @end

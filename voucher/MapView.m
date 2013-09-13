@@ -106,7 +106,8 @@
     MKUserLocation *location = self.userLocation;
     
     CLLocationCoordinate2D centerCoord = location.location.coordinate;
-
+    
+    
     [self setCenterCoordinate:centerCoord zoomLevel:self.zoomLevel animated:NO];
 }
 
@@ -164,5 +165,12 @@
 {
     [self.mydelegate voucherOnMapViewClick:sender];
 }
+
+
+//- (void)setLocation: (CLLocationCoordinate2D) startCoord
+//{
+//    MKCoordinateRegion adjustedRegion = [self regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 100, 100)];
+//    [self setRegion:adjustedRegion animated:YES];
+//}
 
 @end
