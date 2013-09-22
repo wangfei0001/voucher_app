@@ -105,4 +105,12 @@
     self.voucherView.delegate = self;
 }
 
+
+- (IBAction)searchClick:(id)sender {
+    
+    [self performSegueWithIdentifier:@"ShowSearch" sender:self];
+}
+
+
+
 @end

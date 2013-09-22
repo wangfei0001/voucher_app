@@ -26,6 +26,17 @@
     //background for navigation bar
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar.png"] forBarMetrics:UIBarMetricsDefault];
     
+    
+    [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+              [UIColor whiteColor],
+              UITextAttributeTextColor,
+              [UIColor darkGrayColor],
+              UITextAttributeTextShadowColor,
+              [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+              UITextAttributeTextShadowOffset,
+              nil] 
+    forState:UIControlStateNormal];
+    
 }
 
 

@@ -99,8 +99,20 @@
 }
 
 
-
-
+/*
+ * Search voucher by keywords
+ */
++ (void)searchVoucher: (NSString *)keyword
+              success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success
+{
+    
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                keyword,
+                                @"search",
+                                nil];
+    
+    [self getVouchers:parameters success:success];
+}
 
 
 #pragma mark - 需要用户登录的操作

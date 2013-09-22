@@ -34,6 +34,7 @@
 		9EAA34C517C85B8500C9DB1D /* VoucherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA34C417C85B8500C9DB1D /* VoucherView.m */; };
 		9EAFAF1117D0A4D400642A86 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFAF1017D0A4D400642A86 /* Api.m */; };
 		9EB5C87517D4BD8E00EA3838 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB5C87417D4BD8E00EA3838 /* Security.framework */; };
+		9EBCFF0017E85AFB0082D934 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBCFEFF17E85AFB0082D934 /* SearchController.m */; };
 		9EBEEEAC17CCD5B500ACEB4D /* Voucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEEEAB17CCD5B500ACEB4D /* Voucher.m */; };
 		9EBFC80517C62F6E001D53FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBFC80417C62F6E001D53FD /* UIKit.framework */; };
 		9EBFC80717C62F6E001D53FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBFC80617C62F6E001D53FD /* Foundation.framework */; };
@@ -66,6 +67,7 @@
 		9EBFC86817C63970001D53FD /* VoucherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBFC86717C63970001D53FD /* VoucherCell.xib */; };
 		9EBFC86D17C639BD001D53FD /* VoucherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFC86C17C639BD001D53FD /* VoucherCell.m */; };
 		9EC3D7AE17E31D540083FCF2 /* favourite_dis.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3D7AD17E31D540083FCF2 /* favourite_dis.png */; };
+		9EC93AAC17E9D21F004A5075 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC93AAB17E9D21F004A5075 /* SearchBar.m */; };
 		9ECE26AA17DDE46C00FE735B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26A917DDE46C00FE735B /* Session.m */; };
 		9ECE26AD17DDEDC100FE735B /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AC17DDEDC100FE735B /* AccountController.m */; };
 		9ECE26B017DDF05F00FE735B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AF17DDF05F00FE735B /* MBProgressHUD.m */; };
@@ -125,6 +127,8 @@
 		9EAFAF0F17D0A4D400642A86 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
 		9EAFAF1017D0A4D400642A86 /* Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.m; sourceTree = "<group>"; };
 		9EB5C87417D4BD8E00EA3838 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9EBCFEFE17E85AFB0082D934 /* SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
+		9EBCFEFF17E85AFB0082D934 /* SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
 		9EBEEEAA17CCD5B500ACEB4D /* Voucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Voucher.h; path = Models/Voucher.h; sourceTree = "<group>"; };
 		9EBEEEAB17CCD5B500ACEB4D /* Voucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Voucher.m; path = Models/Voucher.m; sourceTree = "<group>"; };
 		9EBFC80117C62F6E001D53FD /* voucher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voucher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,8 @@
 		9EBFC86B17C639BD001D53FD /* VoucherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoucherCell.h; sourceTree = "<group>"; };
 		9EBFC86C17C639BD001D53FD /* VoucherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoucherCell.m; sourceTree = "<group>"; };
 		9EC3D7AD17E31D540083FCF2 /* favourite_dis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favourite_dis.png; sourceTree = "<group>"; };
+		9EC93AAA17E9D21F004A5075 /* SearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBar.h; sourceTree = "<group>"; };
+		9EC93AAB17E9D21F004A5075 /* SearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
 		9ECE26A817DDE46C00FE735B /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		9ECE26A917DDE46C00FE735B /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		9ECE26AB17DDEDC100FE735B /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountController.h; sourceTree = "<group>"; };
@@ -380,6 +386,8 @@
 				9E5872AD17D20C54006E948E /* DefaultController.m */,
 				9ECE26AB17DDEDC100FE735B /* AccountController.h */,
 				9ECE26AC17DDEDC100FE735B /* AccountController.m */,
+				9EBCFEFE17E85AFB0082D934 /* SearchController.h */,
+				9EBCFEFF17E85AFB0082D934 /* SearchController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -397,6 +405,8 @@
 				9EAA34C417C85B8500C9DB1D /* VoucherView.m */,
 				9EA7F4C217CF50C900D7D003 /* MapView.h */,
 				9EA7F4C317CF50C900D7D003 /* MapView.m */,
+				9EC93AAA17E9D21F004A5075 /* SearchBar.h */,
+				9EC93AAB17E9D21F004A5075 /* SearchBar.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -578,6 +588,8 @@
 				9ECE26B017DDF05F00FE735B /* MBProgressHUD.m in Sources */,
 				9E17D8DF17E35F9E00F25F31 /* Merchant.m in Sources */,
 				9EE7FA4717E3D2FE00AB020A /* Address.m in Sources */,
+				9EBCFF0017E85AFB0082D934 /* SearchController.m in Sources */,
+				9EC93AAC17E9D21F004A5075 /* SearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

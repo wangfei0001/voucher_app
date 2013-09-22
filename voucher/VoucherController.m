@@ -255,6 +255,13 @@
 
 
 
+
+- (IBAction)searchClick:(id)sender {
+    [self performSegueWithIdentifier:@"ShowSearch" sender:self];
+}
+
+
+
 #pragma mark - For table pull refresh control
 /***
  *  Pull table view to refresh

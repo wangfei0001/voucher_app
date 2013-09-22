@@ -4,41 +4,53 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search Controller-->
         <scene sceneID="3Ai-M8-Ab3">
             <objects>
-                <viewController id="Lyg-QX-ej1" sceneMemberID="viewController">
+                <viewController id="Lyg-QX-ej1" customClass="SearchController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sMI-zQ-wKY">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-Z4-YsO">
+                            <searchBar contentMode="redraw" placeholder="优惠券或商家" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPs-t4-HT7" customClass="SearchBar">
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>优惠券</string>
+                                    <string>商家</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="Lyg-QX-ej1" id="rbs-PV-eDR"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hOH-Z4-YsO" firstAttribute="trailing" secondItem="sMI-zQ-wKY" secondAttribute="trailing" type="default" id="d3Q-1S-vqc"/>
-                            <constraint firstItem="hOH-Z4-YsO" firstAttribute="leading" secondItem="sMI-zQ-wKY" secondAttribute="leading" type="default" id="ejF-GI-GkE"/>
-                            <constraint firstItem="hOH-Z4-YsO" firstAttribute="top" secondItem="sMI-zQ-wKY" secondAttribute="top" type="default" id="w6c-D3-JYe"/>
+                            <constraint firstItem="jPs-t4-HT7" firstAttribute="leading" secondItem="sMI-zQ-wKY" secondAttribute="leading" type="default" id="85z-3y-og7"/>
+                            <constraint firstItem="jPs-t4-HT7" firstAttribute="trailing" secondItem="sMI-zQ-wKY" secondAttribute="trailing" type="default" id="DU9-tx-CYG"/>
+                            <constraint firstItem="jPs-t4-HT7" firstAttribute="top" secondItem="sMI-zQ-wKY" secondAttribute="top" type="default" id="ZOL-2y-n3y"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="NyS-W8-62Z"/>
                     <navigationItem key="navigationItem" id="3rZ-Z3-XzZ">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="wJE-Ha-zaP">
-                            <rect key="frame" x="96" y="7" width="128" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="商家"/>
-                                <segment title="优惠券"/>
-                            </segments>
-                        </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="m67-ay-qYF" id="AKM-g1-Cfz"/>
+                        <segue destination="Hil-yR-s1K" kind="modal" identifier="ShowMerchantOnMap" id="K03-se-hjW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Za-3q-xYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="m67-ay-qYF">
+                    <connections>
+                        <outlet property="delegate" destination="Lyg-QX-ej1" id="JHe-JR-0qe"/>
+                        <outlet property="searchBar" destination="jPs-t4-HT7" id="nh6-dK-WSs"/>
+                        <outlet property="searchContentsController" destination="Lyg-QX-ej1" id="gQC-xp-RQF"/>
+                        <outlet property="searchResultsDataSource" destination="Lyg-QX-ej1" id="OJi-Ad-5Rw"/>
+                        <outlet property="searchResultsDelegate" destination="Lyg-QX-ej1" id="sgn-bo-u7u"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="313" y="1022"/>
+            <point key="canvasLocation" x="953" y="618"/>
         </scene>
         <!--Account Controller - 我的帐号-->
         <scene sceneID="ACb-RM-G23">
@@ -80,10 +92,17 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="HAx-aa-gtL"/>
-                    <navigationItem key="navigationItem" id="jvt-Wp-0bc"/>
+                    <navigationItem key="navigationItem" id="jvt-Wp-0bc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="cwp-Y6-niS">
+                            <connections>
+                                <action selector="searchClick:" destination="4cO-H7-fkf" id="Z0g-46-Em4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTable" destination="7FI-Wr-4Ij" id="ZZf-lW-fhv"/>
                         <segue destination="Hil-yR-s1K" kind="modal" identifier="ShowMerchantOnMap" id="dI0-4E-FtN"/>
+                        <segue destination="Lyg-QX-ej1" kind="push" identifier="ShowSearch" id="fsP-39-pkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axV-eX-uf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,6 +176,11 @@
                     <tabBarItem key="tabBarItem" title="" id="RhL-nR-YWE"/>
                     <navigationItem key="navigationItem" id="zwa-Kh-uHt">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="jFu-RH-AMM">
+                            <connections>
+                                <action selector="searchClick:" destination="oBu-Qi-eOa" id="Rau-nb-cHF"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="E4J-e9-XW8">
                             <rect key="frame" x="96" y="7" width="128" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,6 +197,7 @@
                         <outlet property="mainTable" destination="nnH-rW-mWa" id="D8G-vv-bWd"/>
                         <outlet property="segementCtrl" destination="E4J-e9-XW8" id="8Cj-IQ-KYf"/>
                         <segue destination="Hil-yR-s1K" kind="modal" identifier="ShowMerchantOnMap" id="nJA-df-Dl5"/>
+                        <segue destination="Lyg-QX-ej1" kind="push" identifier="ShowSearch" id="Jvb-tX-JHK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofh-TI-EcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbY-j6-Sgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="-178"/>
+            <point key="canvasLocation" x="1343" y="-182"/>
         </scene>
         <!--Default Controller-->
         <scene sceneID="VLH-RQ-NHQ">
@@ -571,14 +596,11 @@
         <!--Navigation Controller - 搜索-->
         <scene sceneID="Tvq-JU-CN1">
             <objects>
-                <navigationController definesPresentationContext="YES" id="0hG-Gv-ZKi" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="0hG-Gv-ZKi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="搜索" id="rQW-md-d7b"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcW-6Q-bvM">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="Lyg-QX-ej1" kind="relationship" relationship="rootViewController" id="g0J-JB-OFE"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dqt-v4-Kv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -604,9 +626,6 @@
     <classes>
         <class className="AccountController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountController.h"/>
-            <relationships>
-                <relationship kind="action" name="logoutClick:"/>
-            </relationships>
         </class>
         <class className="BaseController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseController.h"/>
@@ -623,8 +642,6 @@
         <class className="LoginController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginController.h"/>
             <relationships>
-                <relationship kind="action" name="loginClick:"/>
-                <relationship kind="action" name="registerClick:"/>
                 <relationship kind="outlet" name="loginTable" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -637,9 +654,6 @@
         </class>
         <class className="MapView" superclassName="MKMapView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapView.h"/>
-            <relationships>
-                <relationship kind="action" name="myShowDetailsMethod:"/>
-            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -647,9 +661,14 @@
         <class className="RegisterController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterController.h"/>
             <relationships>
-                <relationship kind="action" name="registerClick:"/>
                 <relationship kind="outlet" name="registerTable" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="SearchBar" superclassName="UISearchBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchBar.h"/>
+        </class>
+        <class className="SearchController" superclassName="BaseController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchController.h"/>
         </class>
         <class className="TabController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TabController.h"/>
@@ -657,7 +676,6 @@
         <class className="VoucherController" superclassName="BaseController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VoucherController.h"/>
             <relationships>
-                <relationship kind="action" name="segementAction:"/>
                 <relationship kind="outlet" name="mainTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MapView"/>
                 <relationship kind="outlet" name="segementCtrl" candidateClass="UISegmentedControl"/>
@@ -670,7 +688,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dI0-4E-FtN"/>
+        <segue reference="fsP-39-pkS"/>
+        <segue reference="K03-se-hjW"/>
         <segue reference="rwA-Rt-Dnw"/>
     </inferredMetricsTieBreakers>
 </document>

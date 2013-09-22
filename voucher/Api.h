@@ -25,6 +25,9 @@
 + (void)removeFavouriteVocher: (int)id_favourite
                    success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 
++ (void)searchVoucher: (NSString *)keyword
+                    success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
 
 + (void)login: (NSString *)username
                 password: (NSString *)password
