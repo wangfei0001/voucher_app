@@ -16,6 +16,12 @@
 		9E5872A817D14D57006E948E /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872A717D14D57006E948E /* LoginController.m */; };
 		9E5872AB17D14D63006E948E /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872AA17D14D63006E948E /* RegisterController.m */; };
 		9E5872AE17D20C54006E948E /* DefaultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872AD17D20C54006E948E /* DefaultController.m */; };
+		9E96482417F04FDD0073AD36 /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96482317F04FDD0073AD36 /* CategoryView.m */; };
+		9E96482617F04FF70073AD36 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E96482517F04FF70073AD36 /* CategoryView.xib */; };
+		9E96482917F05C9B0073AD36 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96482817F05C9B0073AD36 /* Global.m */; };
+		9E96482C17F063FA0073AD36 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96482B17F063FA0073AD36 /* Category.m */; };
+		9E96483217F069340073AD36 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E96483117F069340073AD36 /* CategoryCell.xib */; };
+		9E96483517F069F10073AD36 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96483417F069F10073AD36 /* CategoryCell.m */; };
 		9E997AEB17D352F0001B2D71 /* PopSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E997AEA17D352F0001B2D71 /* PopSegue.m */; };
 		9E999D2917C96D38001F5BFD /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E999D2817C96D38001F5BFD /* close.png */; };
 		9E999D2B17C97E08001F5BFD /* voucher_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E999D2A17C97E08001F5BFD /* voucher_bg.png */; };
@@ -103,6 +109,16 @@
 		9E5872AA17D14D63006E948E /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
 		9E5872AC17D20C54006E948E /* DefaultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultController.h; sourceTree = "<group>"; };
 		9E5872AD17D20C54006E948E /* DefaultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultController.m; sourceTree = "<group>"; };
+		9E96482217F04FDD0073AD36 /* CategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
+		9E96482317F04FDD0073AD36 /* CategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
+		9E96482517F04FF70073AD36 /* CategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		9E96482717F05C9B0073AD36 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		9E96482817F05C9B0073AD36 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
+		9E96482A17F063FA0073AD36 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		9E96482B17F063FA0073AD36 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		9E96483117F069340073AD36 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		9E96483317F069F10073AD36 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
+		9E96483417F069F10073AD36 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		9E997AE917D352F0001B2D71 /* PopSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopSegue.h; sourceTree = "<group>"; };
 		9E997AEA17D352F0001B2D71 /* PopSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopSegue.m; sourceTree = "<group>"; };
 		9E999D2817C96D38001F5BFD /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
@@ -245,6 +261,8 @@
 			children = (
 				9EBFC86717C63970001D53FD /* VoucherCell.xib */,
 				9EAA34C117C85B7300C9DB1D /* VoucherView.xib */,
+				9E96482517F04FF70073AD36 /* CategoryView.xib */,
+				9E96483117F069340073AD36 /* CategoryCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -407,6 +425,10 @@
 				9EA7F4C317CF50C900D7D003 /* MapView.m */,
 				9EC93AAA17E9D21F004A5075 /* SearchBar.h */,
 				9EC93AAB17E9D21F004A5075 /* SearchBar.m */,
+				9E96482217F04FDD0073AD36 /* CategoryView.h */,
+				9E96482317F04FDD0073AD36 /* CategoryView.m */,
+				9E96483317F069F10073AD36 /* CategoryCell.h */,
+				9E96483417F069F10073AD36 /* CategoryCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -428,6 +450,10 @@
 				9E17D8DE17E35F9E00F25F31 /* Merchant.m */,
 				9EE7FA4517E3D2FE00AB020A /* Address.h */,
 				9EE7FA4617E3D2FE00AB020A /* Address.m */,
+				9E96482717F05C9B0073AD36 /* Global.h */,
+				9E96482817F05C9B0073AD36 /* Global.m */,
+				9E96482A17F063FA0073AD36 /* Category.h */,
+				9E96482B17F063FA0073AD36 /* Category.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -520,6 +546,8 @@
 				9EA7F4CD17CF85B600D7D003 /* map-pin.png in Resources */,
 				9EA7F4CF17CF884E00D7D003 /* favourite.png in Resources */,
 				9EC3D7AE17E31D540083FCF2 /* favourite_dis.png in Resources */,
+				9E96482617F04FF70073AD36 /* CategoryView.xib in Resources */,
+				9E96483217F069340073AD36 /* CategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +618,10 @@
 				9EE7FA4717E3D2FE00AB020A /* Address.m in Sources */,
 				9EBCFF0017E85AFB0082D934 /* SearchController.m in Sources */,
 				9EC93AAC17E9D21F004A5075 /* SearchBar.m in Sources */,
+				9E96482417F04FDD0073AD36 /* CategoryView.m in Sources */,
+				9E96482917F05C9B0073AD36 /* Global.m in Sources */,
+				9E96482C17F063FA0073AD36 /* Category.m in Sources */,
+				9E96483517F069F10073AD36 /* CategoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

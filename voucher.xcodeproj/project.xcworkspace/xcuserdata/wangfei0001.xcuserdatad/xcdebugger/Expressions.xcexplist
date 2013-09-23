@@ -3,10 +3,32 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "__24-[Global initCategories]_block_invoke:Global.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VoucherController showCategories]:VoucherController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CategoryView initWithCoder:]:CategoryView.m">
+      </ContextState>
+      <ContextState
          contextName = "-[VoucherController viewDidLoad]:VoucherController.m">
          <PersistentStrings>
             <PersistentString
                value = "self.navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__copy_helper_block_:Global.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cats">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

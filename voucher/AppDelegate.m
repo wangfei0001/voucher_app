@@ -44,9 +44,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    
-    
+    //global variables.
+    self.global = [[Global alloc] init];
     
     [Session loadCredentials];
     

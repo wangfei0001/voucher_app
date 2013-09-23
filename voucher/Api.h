@@ -40,4 +40,7 @@
         password: (NSString *)password
         success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 
+
++ (void)getCategories:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
 @end

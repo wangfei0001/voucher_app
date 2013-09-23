@@ -20,6 +20,8 @@
     id selectedVoucher;
     
     UIRefreshControl *refreshControl;
+    
+    
 
 }
 
@@ -60,6 +62,10 @@
     
     
     [self initMapView];
+    
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Show" style:UIBarButtonItemStylePlain target:self action:@selector(showCategoryClick:)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
     
     
     refreshControl = [[UIRefreshControl alloc] init];
@@ -134,6 +140,24 @@
 }
 
 #pragma mark - Some event handle functions
+
+
+- (IBAction)showCategoryClick:(id)sender
+{
+    [self showCategories];
+}
+
+
+- (void)showCategories
+{
+    
+    if(self.categoriesView == nil){
+        self.categoriesView = (CategoryView *)[[[NSBundle mainBundle] loadNibNamed:@"CategoryView" owner:self options:nil] objectAtIndex:0];
+        self.categoriesView.catsData = self.appDelegate.global.categories;
+    }
+    !self.categoriesView.visible ? [self.categoriesView show:self.view] : [self.categoriesView hide];
+}
+
 /***
  *  Segement Click Event handle function
  *

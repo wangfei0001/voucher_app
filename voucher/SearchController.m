@@ -82,6 +82,11 @@
         //cell = [[TripsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    id voucherData = [data objectAtIndex:indexPath.row];
+    
+    cell.merchantName.text = [[voucherData objectForKey:@"merchant"] objectForKey:@"company"];
+    
+    cell.voucherName.text = [voucherData objectForKey:@"name"];
     
     return cell;
 }

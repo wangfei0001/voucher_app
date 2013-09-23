@@ -10,6 +10,8 @@
 
 #import "BaseController.h"
 
+#import "CategoryView.h"
+
 #import "MapView.h"
 
 @interface VoucherController : BaseController<mapViewDelegate>
@@ -20,5 +22,8 @@
 
 
 @property (strong, nonatomic) IBOutlet MapView *mapView;
+
+
+@property (strong, nonatomic) IBOutlet CategoryView *categoriesView; //categories view
 
 @end

@@ -10,6 +10,8 @@
 
 #import "Session.h"
 
+#import "Global.h"
+
 #import "MBProgressHUD.h"
 
 #define APP_DELEGATE (AppDelegate*)[UIApplication sharedApplication].delegate
@@ -22,6 +24,8 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) MBProgressHUD *HUD;
+
+@property (strong, nonatomic) Global *global;
 
 
 - (void)ShowLoading: (UIView *)view;
