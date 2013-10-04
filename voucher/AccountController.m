@@ -113,7 +113,8 @@
         
         [appDelegate HideLoading];
         
-        [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+        [self.tabBarController setSelectedIndex:0];
+        //[self.navigationController dismissViewControllerAnimated:NO completion:nil];
     }];
     
     
@@ -155,7 +156,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *cellData = [data objectAtIndex:indexPath.row];
+    //NSDictionary *cellData = [data objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"ShowProfileChange" sender:self];
     

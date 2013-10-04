@@ -295,6 +295,10 @@
 		9E308EBC17FC59A400FE7917 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				9E5872A617D14D57006E948E /* LoginController.h */,
+				9E5872A717D14D57006E948E /* LoginController.m */,
+				9E5872A917D14D63006E948E /* RegisterController.h */,
+				9E5872AA17D14D63006E948E /* RegisterController.m */,
 				9ECE26AB17DDEDC100FE735B /* AccountController.h */,
 				9ECE26AC17DDEDC100FE735B /* AccountController.m */,
 				9E308EBD17FC59E200FE7917 /* ProfileChangeController.h */,
@@ -526,10 +530,6 @@
 				9E2673C517C7583C00EFE754 /* NavigationController.m */,
 				9E5872A317D14CAA006E948E /* TabController.h */,
 				9E5872A417D14CAA006E948E /* TabController.m */,
-				9E5872A617D14D57006E948E /* LoginController.h */,
-				9E5872A717D14D57006E948E /* LoginController.m */,
-				9E5872A917D14D63006E948E /* RegisterController.h */,
-				9E5872AA17D14D63006E948E /* RegisterController.m */,
 				9E5872AC17D20C54006E948E /* DefaultController.h */,
 				9E5872AD17D20C54006E948E /* DefaultController.m */,
 				9EBCFEFE17E85AFB0082D934 /* SearchController.h */,

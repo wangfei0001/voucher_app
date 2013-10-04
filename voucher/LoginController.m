@@ -64,6 +64,12 @@
     [self.view endEditing:YES];// this will do the trick
 }
 
+- (IBAction)cancelClick:(id)sender {
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 - (IBAction)loginClick:(id)sender {
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
 //    
@@ -97,10 +103,6 @@
     }];
 }
 
-
-- (IBAction)registerClick:(id)sender {
-    [self performSegueWithIdentifier:@"ShowRegister" sender:self];
-}
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [textField resignFirstResponder];

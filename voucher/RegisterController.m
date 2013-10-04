@@ -179,5 +179,14 @@
     }
 }
 
+- (IBAction)cancelClick:(id)sender {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)loginClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 @end
