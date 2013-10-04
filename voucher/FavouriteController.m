@@ -42,6 +42,12 @@
     
     data = [[NSMutableArray alloc] initWithCapacity:0];
     
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [Api getMyFavouriteVouchers:nil success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
         //update the voucher views
         if(JSON != [NSNull null]){

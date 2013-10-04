@@ -14,9 +14,18 @@
 
 #import "MBProgressHUD.h"
 
+#import "WeiboSDK.h"
+
+#import "WeiboApi.h"
+
+#import "WXApi.h"
+
 #define APP_DELEGATE (AppDelegate*)[UIApplication sharedApplication].delegate
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,
+WeiboSDKDelegate,
+WXApiDelegate
+>
 
 
 
@@ -26,6 +35,9 @@
 @property (strong, nonatomic) MBProgressHUD *HUD;
 
 @property (strong, nonatomic) Global *global;
+
+
+@property (strong, nonatomic) WeiboApi *qqwbapi;    //腾迅微薄api
 
 
 - (void)ShowLoading: (UIView *)view;

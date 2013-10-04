@@ -8,6 +8,8 @@
 
 #import "CategoryView.h"
 
+//#import "Category.h"
+
 #define CATS_VIEW_HEIGHT 220
 
 @implementation CategoryView{
@@ -28,9 +30,8 @@
     self = [super initWithCoder:aDecoder];
     if(self){
         self.visible = NO;
-        //[self.catsView setBackgroundColor:[UIColor redColor]];
-
-        [self setBackgroundColor: [UIColor colorWithWhite:0.0 alpha:0.2]];        
+        
+        [self setBackgroundColor: [UIColor colorWithWhite:0.0 alpha:0.2]];
     }
     return self;
 }
@@ -40,7 +41,9 @@
     UINib *cellNib = [UINib nibWithNibName:@"CategoryCell" bundle:nil];
     [self.catsView registerNib:cellNib forCellWithReuseIdentifier:@"CategoryCell"];
     
-    self.catsView.frame = CGRectMake(0, -220, 320, CATS_VIEW_HEIGHT);
+    self.catsView.frame = CGRectMake(0, CATS_VIEW_HEIGHT * -1 + 44, 320, CATS_VIEW_HEIGHT);
+    
+    self.catsView.backgroundColor = [UIColor whiteColor];
 }
 
 
@@ -59,7 +62,7 @@
         [parentView addSubview:self];
         
         
-        CGRect newFrame = CGRectMake(0, 0, 320, CATS_VIEW_HEIGHT);
+        CGRect newFrame = CGRectMake(0, 44, 320, CATS_VIEW_HEIGHT);
         [UIView animateWithDuration:0.3 animations:^{
             self.catsView.frame = newFrame;
         } completion:^(BOOL finished) {
@@ -71,10 +74,12 @@
 - (void)hide
 {
     if(self.visible){
-        CGRect newFrame = CGRectMake(0, CATS_VIEW_HEIGHT * -1, 320, CATS_VIEW_HEIGHT);
+        CGRect newFrame = CGRectMake(0, CATS_VIEW_HEIGHT * -1 + 44, 320, CATS_VIEW_HEIGHT);
         [UIView animateWithDuration:0.3 animations:^{
-            self.catsView.frame = newFrame;
+            self.catsView.alpha = 0;
         } completion:^(BOOL finished) {
+            self.catsView.frame = newFrame;
+            self.catsView.alpha = 1;
             [self removeFromSuperview];
             self.visible = NO;
         }];
@@ -98,9 +103,32 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.backgroundColor = [UIColor whiteColor];
+    
+    Category *cat = [self.catsData objectAtIndex:indexPath.row];
+
+    UILabel *label = (UILabel *)[cell viewWithTag:51];
+    label.text = cat.name;
+    
+    //NSLog(@"%f %f", rect.size.width, rect.size.height);
+    cell.backgroundColor = [UIColor grayColor];
     return cell;
 }
+
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+//{
+//    return UIEdgeInsetsMake(0, 0,0,0);
+//}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Category *cat = [self.catsData objectAtIndex:indexPath.row];
+    
+    [self hide];
+    
+    [self.delegate categoryClick:self selectedCat:cat];
+}
+
+
 
 #pragma Touch Event
 

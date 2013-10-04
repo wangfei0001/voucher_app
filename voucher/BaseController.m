@@ -12,11 +12,15 @@
 
 #import "Voucher.h"
 
+
+
 @interface BaseController (){
     
     BOOL voucherViewMoving;
     
     Voucher *voucher;
+    
+    UIImageView *notFoundImageView;
 
 }
 
@@ -129,7 +133,48 @@
 }
 
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == 0){     
+
+    }else if(buttonIndex == 1){   
+
+    }else if(buttonIndex == 2){     //新浪
+        WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+        request.redirectURI = kRedirectURI;
+        request.scope = @"all";
+        request.userInfo = @{@"SSO_From": @"SendMessageToWeiboViewController",
+                             @"Other_Info_1": [NSNumber numberWithInt:123],
+                             @"Other_Info_2": @[@"obj1", @"obj2"],
+                             @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+        [WeiboSDK sendRequest:request];
+    }else if(buttonIndex == 3){
+        if(self.appDelegate.qqwbapi == nil)
+        {
+            self.appDelegate.qqwbapi = [[WeiboApi alloc]initWithAppKey:QQWeiboAppKey andSecret:QQWeiboAppSecret andRedirectUri:QQWeiboRedirectURI] ;
+        }
+        [self.appDelegate.qqwbapi loginWithDelegate:self andRootController:self];
+    }else{                          //cancel
+        [actionSheet dismissWithClickedButtonIndex:4 animated:YES];
+    }
+    
+}
+
+
+
 #pragma Voucher View delegate 
+
+-(void)shareClick: (id)sender
+{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@""
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:@"微信给好友"
+                                  otherButtonTitles:@"Facebook", @"新浪微博", @"腾讯微博", nil];
+    [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+}
 
 -(void)favouriteClick: (id)sender
 {
@@ -170,6 +215,90 @@
         
         vc.startCoord = [[voucher.merchant.addresses objectAtIndex:0] getCoordinate2D];
     }
+}
+
+#pragma mark 没有找到Voucher显示/移除提示
+
+- (void)showNotFound
+{
+    if(!notFoundImageView){
+        UIImage *image = [UIImage imageNamed:@"404.png"];
+        notFoundImageView = [[UIImageView alloc] initWithImage:image];
+    }
+    [self.mainTable addSubview:notFoundImageView];
+}
+
+- (void)hideNotFound
+{
+    [notFoundImageView removeFromSuperview];
+}
+
+
+#pragma mark WeiboAuthDelegate
+
+/**
+ * @brief   重刷授权成功后的回调
+ * @param   INPUT   wbapi 成功后返回的WeiboApi对象，accesstoken,openid,refreshtoken,expires 等授权信息都在此处返回
+ * @return  无返回
+ */
+- (void)DidAuthRefreshed:(WeiboApi *)wbapi_
+{
+    
+    NSString *str = [[NSString alloc]initWithFormat:@"accesstoken = %@\r openid = %@\r appkey=%@ \r appsecret=%@\r", wbapi_.accessToken, wbapi_.openid, wbapi_.appKey, wbapi_.appSecret];
+    
+    NSLog(@"result = %@",str);
+    
+    [self.appDelegate showAlert:str];
+    
+}
+
+/**
+ * @brief   重刷授权失败后的回调
+ * @param   INPUT   error   标准出错信息
+ * @return  无返回
+ */
+- (void)DidAuthRefreshFail:(NSError *)error
+{
+    NSString *str = [[NSString alloc] initWithFormat:@"refresh token error, errcode = %@",error.userInfo];
+    
+    [self.appDelegate showAlert:str];
+}
+
+/**
+ * @brief   授权成功后的回调
+ * @param   INPUT   wbapi 成功后返回的WeiboApi对象，accesstoken,openid,refreshtoken,expires 等授权信息都在此处返回
+ * @return  无返回
+ */
+- (void)DidAuthFinished:(WeiboApi *)wbapi_
+{
+    NSString *str = [[NSString alloc]initWithFormat:@"accesstoken = %@\r openid = %@\r appkey=%@ \r appsecret=%@\r", wbapi_.accessToken, wbapi_.openid, wbapi_.appKey, wbapi_.appSecret];
+    
+    NSLog(@"result = %@",str);
+    
+    [self.appDelegate showAlert:str];
+}
+
+/**
+ * @brief   授权成功后的回调
+ * @param   INPUT   wbapi   weiboapi 对象，取消授权后，授权信息会被清空
+ * @return  无返回
+ */
+- (void)DidAuthCanceled:(WeiboApi *)wbapi_
+{
+    
+}
+
+/**
+ * @brief   授权成功后的回调
+ * @param   INPUT   error   标准出错信息
+ * @return  无返回
+ */
+- (void)DidAuthFailWithError:(NSError *)error
+{
+    NSString *str = [[NSString alloc] initWithFormat:@"refresh token error, errcode = %@",error.userInfo];
+    
+    
+    [self.appDelegate showAlert:str];
 }
 
 

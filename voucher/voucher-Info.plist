@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>intems.com.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.sina.weibo.SNWeiboSDKDemo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -20,6 +20,27 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.intems</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb801421080</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.intems</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb1689987181</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -30,6 +51,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UILaunchImageFile~iphone</key>
+	<string>Default.png</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -12,9 +12,20 @@
 
 #import "Api.h"
 
+#import "Session.h"
+
+
+#define USER_PROFILE_USERNAME       1
+
+#define USER_PROFILE_PASSWORD       2
+
+#define USER_PROFILE_EMAIL       3
+
 @interface AccountController (){
     
     AppDelegate *appDelegate;
+    
+    NSMutableArray *data;
     
 }
 
@@ -35,12 +46,56 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    
+    self.tableView.backgroundView = nil;
+    [self.tableView setBackgroundColor:[UIColor colorWithRed:(220/255.0) green:(220/255.0) blue:(220/255.0) alpha:1]];
+
+    data = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    
+    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
+                     @"用户名",
+                     @"label",
+                     @"上海阿飞",
+                     @"value",
+                     [NSNumber numberWithInt:USER_PROFILE_USERNAME],
+                     @"key",
+                     nil]];
+    
+    
+    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
+                     @"密码",
+                     @"label",
+                     @"616682",
+                     @"value",
+                     [NSNumber numberWithInt:USER_PROFILE_PASSWORD],
+                     @"key",
+                     nil]];
+    
+    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
+                     @"电子邮件",
+                     @"label",
+                     @"wangfei001@hotmail.com",
+                     @"value",
+                     [NSNumber numberWithInt:USER_PROFILE_EMAIL],
+                     @"key",
+                     nil]];
+    
     
     appDelegate = APP_DELEGATE;
     
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     //logout button
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStylePlain target:self action:@selector(logoutClick:)];
-    self.navigationItem.rightBarButtonItem = anotherButton;
+    if([Session isLogged]){
+        UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStylePlain target:self action:@selector(logoutClick:)];
+        self.navigationItem.rightBarButtonItem = anotherButton;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +116,48 @@
         [self.navigationController dismissViewControllerAnimated:NO completion:nil];
     }];
     
+    
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [data count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"ProfileCell";
+    
+    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }else{
+        //cell = [[TripsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+    }
+    NSDictionary *cellData = [data objectAtIndex:indexPath.row];
+    
+    int cellKey = [[cellData objectForKey:@"key"] intValue];
+    
+    UILabel *label1 = (UILabel *)[cell viewWithTag:50];
+    label1.text = [cellData objectForKey:@"label"];
+
+    UILabel *label2 = (UILabel *)[cell viewWithTag:51];
+    if(cellKey == USER_PROFILE_PASSWORD){
+        label2.text = @"********";
+    }else
+        label2.text = [cellData objectForKey:@"value"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *cellData = [data objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"ShowProfileChange" sender:self];
     
 }
 

@@ -12,3 +12,14 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+#define kAppKey         @"1689987181"
+#define kRedirectURI    @"http://www.sina.com"
+
+#define QQWeiboAppKey       @"801421080"
+#define QQWeiboAppSecret    @"69b33fb25cd1815cd4111a7a197be613"
+#define QQWeiboRedirectURI  @"http://www.qq.com"
+
+#define WXAppID             @"wx2868041e0e67d6fa"
+#define WXAppKey            @"981cf702d05e458dd5dfc3c1f961aac7"

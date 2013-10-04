@@ -16,6 +16,8 @@
 
 -(void)favouriteClick: (id)sender;
 
+-(void)shareClick: (id)sender;
+
 @end
 
 @interface VoucherView : UIView
@@ -34,7 +36,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *redeemBut;
 
-@property (weak, nonatomic) IBOutlet UIImageView *favouriteButton;
+@property (weak, nonatomic) IBOutlet UIButton *favouriteButton;
 
 
 @property (nonatomic, assign) id<voucherViewDelegate> delegate;

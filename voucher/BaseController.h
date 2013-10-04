@@ -14,12 +14,22 @@
 
 #import "Api.h"
 
-@interface BaseController : UIViewController<voucherViewDelegate>
+@interface BaseController : UIViewController<voucherViewDelegate,
+UIActionSheetDelegate,
+WeiboRequestDelegate,
+WeiboAuthDelegate
+>
 
 @property (nonatomic, weak) AppDelegate *appDelegate;
 
 @property (weak, nonatomic) VoucherView *voucherView;
 
+@property (weak, nonatomic) IBOutlet UITableView *mainTable;
+
 - (void)showVoucherView: (id)data;
+
+- (void)showNotFound;
+
+- (void)hideNotFound;
 
 @end

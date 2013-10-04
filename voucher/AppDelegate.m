@@ -10,6 +10,8 @@
 
 #import "KeychainItemWrapper.h"
 
+
+
 @implementation AppDelegate
 
 
@@ -24,7 +26,7 @@
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selection-tab.png"]];
     
     //background for navigation bar
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar.png"] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar.png"] forBarMetrics:UIBarMetricsDefault];
     
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -37,6 +39,14 @@
               nil] 
     forState:UIControlStateNormal];
     
+    
+    UIImage *backButtonImage = [[UIImage imageNamed:@"button_back.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    // Change the appearance of other navigation button
+    UIImage *barButtonImage = [[UIImage imageNamed:@"button_normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 6, 0, 6)];
+    [[UIBarButtonItem appearance] setBackgroundImage:barButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
 }
 
 
@@ -44,6 +54,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    NSBundle *bundle = [NSBundle mainBundle];
+//    NSDictionary *info = [bundle infoDictionary];
+//    NSString *prodName = [info objectForKey:@"CFBundleDisplayName"];
+    
+    //微博
+    [ WeiboSDK registerApp:kAppKey ];
+    [ WeiboSDK enableDebugMode:YES ];
+    
+    //微信
+//    [WXApi registerApp:WXAppID];
+    
+    
+    
+    
+    
     //global variables.
     self.global = [[Global alloc] init];
     
@@ -66,6 +91,7 @@
 //                                                animated:NO];
     
     [self buildUI];
+
     
     return YES;
     
@@ -99,6 +125,32 @@
 }
 
 
+
+#pragma mark - 各种SNS的sso模块
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+//    return [WXApi handleOpenURL:url delegate:self];
+    
+    return [ WeiboSDK handleOpenURL:url delegate:self ];
+    
+    return [self.qqwbapi handleOpenURL:url];
+}
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+   
+//    return [WXApi handleOpenURL:url delegate:self];
+
+    return [ WeiboSDK handleOpenURL:url delegate:self ];
+
+    return [self.qqwbapi handleOpenURL:url];
+ 
+}
+
+#pragma mark - 一些公用函数
+
 - (void)ShowLoading: (UIView *)view
 {
     if(self.HUD != nil) [self HideLoading];
@@ -124,4 +176,51 @@
 
     [alert show];
 }
+
+
+#pragma mark - 新浪微薄的回调函数
+
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
+{
+    if ([request isKindOfClass:WBProvideMessageForWeiboRequest.class])
+    {
+//        ProvideMessageForWeiboViewController *controller = [[[ProvideMessageForWeiboViewController alloc] init] autorelease];
+//        [self.viewController presentModalViewController:controller animated:YES];
+    }
+}
+
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
+{
+    if ([response isKindOfClass:WBSendMessageToWeiboResponse.class])
+    {
+//        NSString *title = @"发送结果";
+//        NSString *message = [NSString stringWithFormat:@"响应状态: %d\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",
+//                             response.statusCode, response.userInfo, response.requestUserInfo];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+//                                                        message:message
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"确定"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//        [alert release];
+    }
+    else if ([response isKindOfClass:WBAuthorizeResponse.class])
+    {
+//        NSString *title = @"认证结果";
+//        NSString *message = [NSString stringWithFormat:@"响应状态: %d\nresponse.userId: %@\nresponse.accessToken: %@\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",
+//                             response.statusCode, [(WBAuthorizeResponse *)response userID], [(WBAuthorizeResponse *)response accessToken], response.userInfo, response.requestUserInfo];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+//                                                        message:message
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"确定"
+//                                              otherButtonTitles:nil];
+//        
+//        self.wbtoken = [(WBAuthorizeResponse *)response accessToken];
+//        
+//        [alert show];
+//        [alert release];
+    }
+}
+
+
 @end

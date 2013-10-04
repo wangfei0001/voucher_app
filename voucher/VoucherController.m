@@ -76,6 +76,8 @@
         
     data = [[NSMutableArray alloc] initWithCapacity:0];
     
+    [self.appDelegate ShowLoading:self.view];
+    
     [Api getVouchers:nil success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
         //update the voucher views
         for(id val in JSON){
@@ -86,6 +88,8 @@
         
         //update the mapviews
         [self updateMapView];
+        
+        [self.appDelegate HideLoading];
     }];
 
 }
@@ -154,6 +158,7 @@
     if(self.categoriesView == nil){
         self.categoriesView = (CategoryView *)[[[NSBundle mainBundle] loadNibNamed:@"CategoryView" owner:self options:nil] objectAtIndex:0];
         self.categoriesView.catsData = self.appDelegate.global.categories;
+        self.categoriesView.delegate = self;
     }
     !self.categoriesView.visible ? [self.categoriesView show:self.view] : [self.categoriesView hide];
 }
@@ -284,6 +289,39 @@
     [self performSegueWithIdentifier:@"ShowSearch" sender:self];
 }
 
+
+#pragma mark - Category View Delegate
+
+- (void)categoryClick:(id)sender selectedCat:(Category *)selectedCat
+{
+    [self.appDelegate ShowLoading:self.view];
+
+        
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [NSString stringWithFormat:@"%d", selectedCat.id],
+                                @"id_category",
+                                nil];
+    
+    [self hideNotFound];
+    [Api getVouchers:parameters success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+        //update the voucher views
+        [data removeAllObjects];
+        for(id val in JSON){
+            [data addObject:val];
+        }
+        
+        [self.mainTable reloadData];
+        
+        //update the mapviews
+        [self updateMapView];
+        
+        [self.mainTable scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+        if([data count] <= 0){
+            [self showNotFound];
+        }
+        [self.appDelegate HideLoading];
+    }];
+}
 
 
 #pragma mark - For table pull refresh control

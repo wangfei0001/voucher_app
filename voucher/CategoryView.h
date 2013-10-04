@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Category.h"
+
+@protocol categoryViewDelegate<NSObject>
+
+-(void)categoryClick: (id)sender selectedCat: (Category *)selectedCat;
+
+@end
+
 @interface CategoryView : UIView
 
 @property (strong, nonatomic) NSMutableArray *catsData;
@@ -15,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *catsView;
 
 @property (assign, nonatomic) BOOL visible;
+
+@property (nonatomic, assign) id<categoryViewDelegate> delegate;
 
 - (void)show: (UIView *)parentView;
 

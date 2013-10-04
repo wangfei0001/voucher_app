@@ -12,6 +12,6 @@
 
 @interface FavouriteController : BaseController<voucherViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *mainTable;
+
 
 @end

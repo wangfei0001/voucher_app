@@ -17,9 +17,13 @@
 #import <CommonCrypto/CommonHMAC.h>
 
 
-#define DOMAIN_URL @"http://voucher/api/v1/"
+#define DOMAIN_URL @"http://192.168.1.101/api/v1/"
 
-#define DOMAIN_URL_SSH @"https://voucher/api/v1/"
+//#define DOMAIN_URL @"http://voucher/api/v1/"
+
+#define DOMAIN_URL_SSH @"https://192.168.1.101/api/v1/"
+
+//#define DOMAIN_URL_SSH @"https://voucher/api/v1/"
 
 @implementation Api;
 

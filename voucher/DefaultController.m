@@ -31,10 +31,10 @@
     
     UIViewController *vc;
     
-    if([Session isLogged])
+//    if([Session isLogged])
         vc = [storyboard instantiateViewControllerWithIdentifier:@"MainTabController"];
-    else
-        vc = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+//    else
+//        vc = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
     
     
     [vc setModalPresentationStyle:UIModalPresentationFullScreen];

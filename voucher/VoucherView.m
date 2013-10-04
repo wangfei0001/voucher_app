@@ -70,13 +70,6 @@
         [self removeView];
     }else if(touch.view == self){
         [self removeView];
-    }else if(touch.view == self.showMapView){      //inner view
-        
-        [self.delegate showMerchantOnMapClick:self];
-    }else if(touch.view == self.favouriteButton){
-        
-        [self.delegate favouriteClick:self];
-        
     }
 }
 
@@ -96,15 +89,29 @@
 }
 
 
+- (IBAction)mapClick:(id)sender {
+    [self.delegate showMerchantOnMapClick:self];
+}
+
+
 - (IBAction)redeemClick:(id)sender
 {
     [self.delegate redeemVoucherClick:sender];
 }
 
 
+- (IBAction)shareClick:(id)sender {
+    [self.delegate shareClick:sender];
+}
+
+- (IBAction)favouriteClick:(id)sender {
+    [self.delegate favouriteClick:self];
+}
+
+
 - (void)updateView: (BOOL)favourite
 {
-    self.favouriteButton.image = [UIImage imageNamed:(favourite?@"favourite.png":@"favourite_dis.png")];
+    [self.favouriteButton setImage:[UIImage imageNamed:(favourite?@"favourite.png":@"favourite_dis.png")] forState:UIControlStateNormal];
 }
 
 @end

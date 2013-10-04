@@ -1,13 +1,13 @@
 //
-//  CategoryCell.h
+//  Button.h
 //  voucher
 //
-//  Created by fei wang on 13-9-23.
+//  Created by fei wang on 13-10-4.
 //  Copyright (c) 2013年 fei wang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CategoryCell : UICollectionViewCell
+@interface Button : UIButton
 
 @end
