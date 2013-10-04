@@ -180,7 +180,7 @@
 }
 
 - (IBAction)cancelClick:(id)sender {
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)loginClick:(id)sender {

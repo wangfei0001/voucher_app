@@ -9,10 +9,13 @@
 
 #import "TabController.h"
 
-//#import "DefaultController.h"
+#import "AccountController.h"
 
+#import "FavouriteController.h"
 
-@interface TabController ()
+@interface TabController (){
+    AppDelegate *appDelegate;
+}
 
 @end
 
@@ -35,6 +38,9 @@
     
 //    [self performSegueWithIdentifier:@"ShowLogin" sender:self];
     self.delegate = self;
+    
+    appDelegate = APP_DELEGATE;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,19 +49,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    int idx = tabBarController.selectedIndex;
-    if(idx == 1 || idx == 3){
+    UINavigationController *nav = (UINavigationController *)viewController;
+    //int idx = tabBarController.selectedIndex;
+    if([nav.viewControllers[0] isKindOfClass:[AccountController class]]
+       || [nav.viewControllers[0] isKindOfClass:[FavouriteController class]]){
         if(![Session isLogged]){
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-            UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-            
-            [self presentViewController:vc animated:YES completion:nil];
-            
+//            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+//            UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+//            
+//            [self presentViewController:vc animated:YES completion:nil];
+            [self performSegueWithIdentifier:@"ShowLoginRegister" sender:self];
+            return NO;
         }
     }
+    return YES;
 }
 
 @end
