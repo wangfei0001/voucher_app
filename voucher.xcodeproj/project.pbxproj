@@ -21,6 +21,8 @@
 		9E5872AB17D14D63006E948E /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872AA17D14D63006E948E /* RegisterController.m */; };
 		9E5872AE17D20C54006E948E /* DefaultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872AD17D20C54006E948E /* DefaultController.m */; };
 		9E75CD5917F5BDE2000F442E /* libTCWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CD5717F5BDE2000F442E /* libTCWeiboSDK.a */; };
+		9E872AF417FF6F1500B937D5 /* UIImage+FrColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E872AF317FF6F1500B937D5 /* UIImage+FrColor.m */; };
+		9E8F5E301802D1D300ADF4BF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8F5E2F1802D1D300ADF4BF /* User.m */; };
 		9E91EC3F17FE85D0006046D5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC3E17FE85D0006046D5 /* Settings.bundle */; };
 		9E91EC4F17FE904C006046D5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC4E17FE904C006046D5 /* Default.png */; };
 		9E91EC5117FE904F006046D5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC5017FE904F006046D5 /* Default@2x.png */; };
@@ -30,6 +32,7 @@
 		9E91EC5B17FEAC8A006046D5 /* greenButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC5717FEAC8A006046D5 /* greenButtonHighlight.png */; };
 		9E91EC5C17FEAC8A006046D5 /* greenButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC5817FEAC8A006046D5 /* greenButtonHighlight@2x.png */; };
 		9E91EC5F17FEACC0006046D5 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E91EC5E17FEACC0006046D5 /* Button.m */; };
+		9E91EC6317FEFF29006046D5 /* ForgetPwdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC6217FEFF29006046D5 /* ForgetPwdView.xib */; };
 		9E96482417F04FDD0073AD36 /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96482317F04FDD0073AD36 /* CategoryView.m */; };
 		9E96482617F04FF70073AD36 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E96482517F04FF70073AD36 /* CategoryView.xib */; };
 		9E96482917F05C9B0073AD36 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96482817F05C9B0073AD36 /* Global.m */; };
@@ -60,6 +63,7 @@
 		9EABA58417FAF13B00E2C829 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EABA58317FAF13B00E2C829 /* SettingsController.m */; };
 		9EAFAF1117D0A4D400642A86 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFAF1017D0A4D400642A86 /* Api.m */; };
 		9EB5C87517D4BD8E00EA3838 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB5C87417D4BD8E00EA3838 /* Security.framework */; };
+		9EB977E717FFEE75009F3289 /* ChangePwdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB977E617FFEE75009F3289 /* ChangePwdController.m */; };
 		9EBCFF0017E85AFB0082D934 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBCFEFF17E85AFB0082D934 /* SearchController.m */; };
 		9EBEEEAC17CCD5B500ACEB4D /* Voucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEEEAB17CCD5B500ACEB4D /* Voucher.m */; };
 		9EBFC80517C62F6E001D53FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBFC80417C62F6E001D53FD /* UIKit.framework */; };
@@ -136,6 +140,10 @@
 		9E5872AD17D20C54006E948E /* DefaultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultController.m; sourceTree = "<group>"; };
 		9E75CD5717F5BDE2000F442E /* libTCWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTCWeiboSDK.a; sourceTree = "<group>"; };
 		9E75CD5817F5BDE2000F442E /* WeiboApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboApi.h; sourceTree = "<group>"; };
+		9E872AF217FF6F1500B937D5 /* UIImage+FrColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FrColor.h"; sourceTree = "<group>"; };
+		9E872AF317FF6F1500B937D5 /* UIImage+FrColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FrColor.m"; sourceTree = "<group>"; };
+		9E8F5E2E1802D1D300ADF4BF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9E8F5E2F1802D1D300ADF4BF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9E91EC3E17FE85D0006046D5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = voucher/Settings.bundle; sourceTree = "<group>"; };
 		9E91EC4E17FE904C006046D5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9E91EC5017FE904F006046D5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		9E91EC5817FEAC8A006046D5 /* greenButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		9E91EC5D17FEACC0006046D5 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		9E91EC5E17FEACC0006046D5 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		9E91EC6217FEFF29006046D5 /* ForgetPwdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPwdView.xib; sourceTree = "<group>"; };
 		9E96482217F04FDD0073AD36 /* CategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
 		9E96482317F04FDD0073AD36 /* CategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
 		9E96482517F04FF70073AD36 /* CategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
@@ -192,6 +201,8 @@
 		9EAFAF0F17D0A4D400642A86 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
 		9EAFAF1017D0A4D400642A86 /* Api.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Api.m; sourceTree = "<group>"; };
 		9EB5C87417D4BD8E00EA3838 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9EB977E517FFEE74009F3289 /* ChangePwdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePwdController.h; sourceTree = "<group>"; };
+		9EB977E617FFEE75009F3289 /* ChangePwdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePwdController.m; sourceTree = "<group>"; };
 		9EBCFEFE17E85AFB0082D934 /* SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
 		9EBCFEFF17E85AFB0082D934 /* SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
 		9EBEEEAA17CCD5B500ACEB4D /* Voucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Voucher.h; path = Models/Voucher.h; sourceTree = "<group>"; };
@@ -303,6 +314,8 @@
 				9ECE26AC17DDEDC100FE735B /* AccountController.m */,
 				9E308EBD17FC59E200FE7917 /* ProfileChangeController.h */,
 				9E308EBE17FC59E200FE7917 /* ProfileChangeController.m */,
+				9EB977E517FFEE74009F3289 /* ChangePwdController.h */,
+				9EB977E617FFEE75009F3289 /* ChangePwdController.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -375,6 +388,7 @@
 		9EAA34C017C85B4200C9DB1D /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				9E91EC6217FEFF29006046D5 /* ForgetPwdView.xib */,
 				9EBFC86717C63970001D53FD /* VoucherCell.xib */,
 				9EAA34C117C85B7300C9DB1D /* VoucherView.xib */,
 				9E96482517F04FF70073AD36 /* CategoryView.xib */,
@@ -586,6 +600,10 @@
 				9E96482817F05C9B0073AD36 /* Global.m */,
 				9E96482A17F063FA0073AD36 /* Category.h */,
 				9E96482B17F063FA0073AD36 /* Category.m */,
+				9E872AF217FF6F1500B937D5 /* UIImage+FrColor.h */,
+				9E872AF317FF6F1500B937D5 /* UIImage+FrColor.m */,
+				9E8F5E2E1802D1D300ADF4BF /* User.h */,
+				9E8F5E2F1802D1D300ADF4BF /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -703,6 +721,7 @@
 				9E91EC5A17FEAC8A006046D5 /* greenButton@2x.png in Resources */,
 				9E91EC5B17FEAC8A006046D5 /* greenButtonHighlight.png in Resources */,
 				9E91EC5C17FEAC8A006046D5 /* greenButtonHighlight@2x.png in Resources */,
+				9E91EC6317FEFF29006046D5 /* ForgetPwdView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +802,9 @@
 				9E308EBF17FC59E200FE7917 /* ProfileChangeController.m in Sources */,
 				9EA0F6A317FD919300E17791 /* CategoryController.m in Sources */,
 				9E91EC5F17FEACC0006046D5 /* Button.m in Sources */,
+				9E872AF417FF6F1500B937D5 /* UIImage+FrColor.m in Sources */,
+				9EB977E717FFEE75009F3289 /* ChangePwdController.m in Sources */,
+				9E8F5E301802D1D300ADF4BF /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

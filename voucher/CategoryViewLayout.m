@@ -32,9 +32,10 @@
 
 - (void)setup
 {
-    [self setItemSize:CGSizeMake(100, 72)];
+    [self setItemSize:CGSizeMake(80, 72)];
 //    [self setSectionInset:UIEdgeInsetsMake(0, 0, 0, 0)];
-//    self.minimumInteritemSpacing = 0;
+    self.minimumInteritemSpacing = 0;
+    self.minimumLineSpacing = 0;
 }
 
 @end

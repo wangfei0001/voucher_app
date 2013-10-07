@@ -10,6 +10,8 @@
 
 #import "KeychainItemWrapper.h"
 
+#import "UIImage+FrColor.h"
+
 
 
 @implementation AppDelegate
@@ -24,6 +26,19 @@
     
     //select image for tab bar
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selection-tab.png"]];
+    
+    
+    //navigation bar
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor] rect:CGRectMake(0, 0, 320, 44)] forBarMetrics:UIBarMetricsDefault];
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor blackColor],UITextAttributeTextColor,
+                                               [UIColor clearColor],      UITextAttributeTextShadowColor,
+                                               [NSValue valueWithUIOffset:UIOffsetMake(-1, 0)], UITextAttributeTextShadowOffset,
+                                               [UIFont fontWithName:@"Arial" size:16.0],UITextAttributeFont,
+                                               nil];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
     
     //background for navigation bar
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar.png"] forBarMetrics:UIBarMetricsDefault];

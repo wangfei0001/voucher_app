@@ -70,13 +70,6 @@
 
 
 - (IBAction)loginClick:(id)sender {
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-//    
-//    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainTabController"];
-//    
-//    [vc setModalPresentationStyle:UIModalPresentationFullScreen];
-//    
-//    [self presentViewController:vc animated:NO completion:nil];
     
     UITextField* usernameField = (UITextField*)[[self getTableCell: 0] viewWithTag:TEXTFIELD_USERNAME_TAG];
     
@@ -111,6 +104,22 @@
 {
     return [textField resignFirstResponder];
 }
+
+
+- (IBAction)forgotClick:(id)sender {
+    NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"ForgetPwdView"
+                                                    owner:self options:nil];
+    
+    UIView *forgotView = [bundle objectAtIndex:0];
+    
+
+    
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        [self.view addSubview:forgotView];
+    } completion:nil];
+    
+}
+
 
 #pragma mark - Table View Start
 
@@ -156,5 +165,9 @@
     
     return cell;
 }
+
+
+
+
 
 @end

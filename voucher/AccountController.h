@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountController : UIViewController
+@interface AccountController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UILabel *lblEmail;
 @end

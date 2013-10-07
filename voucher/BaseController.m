@@ -12,6 +12,7 @@
 
 #import "Voucher.h"
 
+#import "UIImageView+AFNetworking.h"
 
 
 @interface BaseController (){
@@ -70,7 +71,8 @@
     
     self.voucherView.voucherTitle.text = [data objectForKey:@"name"];
     
-    
+    NSURL *url = [NSURL URLWithString:@"http://voucher/uploads/logo/1.jpeg"];
+    [self.voucherView.merchantLogo setImageWithURL:url placeholderImage:nil];
     /*
      * 更新是否属于收藏
      */

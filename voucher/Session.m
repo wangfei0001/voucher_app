@@ -10,6 +10,8 @@
 
 #import "KeychainItemWrapper.h"
 
+#import "User.h"
+
 @implementation Session
 
 static NSString *public_key;
@@ -17,6 +19,8 @@ static NSString *public_key;
 static NSString *private_key;
 
 static int userid;
+
+static User *user;
 
 
 + (BOOL)saveCredentials: (NSString *)pub_key pri_key:(NSString *)pri_key userid: (int)userid
@@ -82,6 +86,16 @@ static int userid;
 + (int)userid
 {
     return userid;
+}
+
++ (User *)user
+{
+    return user;
+}
+
++ (void)setUser: (User *)val
+{
+    user = val;
 }
 
 @end

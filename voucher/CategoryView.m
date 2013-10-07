@@ -110,14 +110,10 @@
     label.text = cat.name;
     
     //NSLog(@"%f %f", rect.size.width, rect.size.height);
-    cell.backgroundColor = [UIColor grayColor];
+    //cell.backgroundColor = [UIColor grayColor];
     return cell;
 }
 
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-//{
-//    return UIEdgeInsetsMake(0, 0,0,0);
-//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

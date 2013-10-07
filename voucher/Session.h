@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class User;
+
 @interface Session : NSObject
 
 + (void)loadCredentials;
@@ -21,5 +23,9 @@
 + (NSString *)privateKey;
 
 + (int)userid;
+
++ (User *)user;
+
++ (void)setUser: (User *)val;
 
 @end

@@ -14,6 +14,8 @@
 
 #import "Session.h"
 
+#import "User.h"
+
 
 #define USER_PROFILE_USERNAME       1
 
@@ -51,41 +53,67 @@
     self.tableView.backgroundView = nil;
     [self.tableView setBackgroundColor:[UIColor colorWithRed:(220/255.0) green:(220/255.0) blue:(220/255.0) alpha:1]];
 
-    data = [[NSMutableArray alloc] initWithCapacity:0];
+//    data = [[NSMutableArray alloc] initWithCapacity:0];
     
     
-    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
-                     @"用户名",
-                     @"label",
-                     @"上海阿飞",
-                     @"value",
-                     [NSNumber numberWithInt:USER_PROFILE_USERNAME],
-                     @"key",
-                     nil]];
-    
-    
-    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
-                     @"密码",
-                     @"label",
-                     @"616682",
-                     @"value",
-                     [NSNumber numberWithInt:USER_PROFILE_PASSWORD],
-                     @"key",
-                     nil]];
-    
-    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
-                     @"电子邮件",
-                     @"label",
-                     @"wangfei001@hotmail.com",
-                     @"value",
-                     [NSNumber numberWithInt:USER_PROFILE_EMAIL],
-                     @"key",
-                     nil]];
+//    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
+//                     @"用户名",
+//                     @"label",
+//                     @"上海阿飞",
+//                     @"value",
+//                     [NSNumber numberWithInt:USER_PROFILE_USERNAME],
+//                     @"key",
+//                     nil]];
+//    
+//    
+//    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
+//                     @"密码",
+//                     @"label",
+//                     @"616682",
+//                     @"value",
+//                     [NSNumber numberWithInt:USER_PROFILE_PASSWORD],
+//                     @"key",
+//                     nil]];
+//    
+//    [data addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
+//                     @"电子邮件",
+//                     @"label",
+//                     @"wangfei001@hotmail.com",
+//                     @"value",
+//                     [NSNumber numberWithInt:USER_PROFILE_EMAIL],
+//                     @"key",
+//                     nil]];
     
     
     appDelegate = APP_DELEGATE;
     
 
+    [appDelegate ShowLoading:self.view];
+    [Api getProfile:[Session userid] success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+        
+        self.lblEmail.text = [JSON objectForKey:@"email"];
+        self.lblUsername.text = [JSON objectForKey:@"username"];
+        
+        if(![Session user]){
+            User *user = [[User alloc] init];
+            
+            user.email = [JSON objectForKey:@"email"];
+            
+            user.username = [JSON objectForKey:@"username"];
+            
+            user.fname = [JSON objectForKey:@"fname"];
+            
+            user.lname = [JSON objectForKey:@"lname"];
+            
+            
+            Session.user = user;
+            
+        }
+        
+        
+        [appDelegate HideLoading];
+    }];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -121,45 +149,45 @@
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [data count];
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return [data count];
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *CellIdentifier = @"ProfileCell";
+//    
+//    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
+//        cell = [nib objectAtIndex:0];
+//    }else{
+//        //cell = [[TripsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//        
+//    }
+//    NSDictionary *cellData = [data objectAtIndex:indexPath.row];
+//    
+//    int cellKey = [[cellData objectForKey:@"key"] intValue];
+//    
+//    UILabel *label1 = (UILabel *)[cell viewWithTag:50];
+//    label1.text = [cellData objectForKey:@"label"];
+//
+//    UILabel *label2 = (UILabel *)[cell viewWithTag:51];
+//    if(cellKey == USER_PROFILE_PASSWORD){
+//        label2.text = @"********";
+//    }else
+//        label2.text = [cellData objectForKey:@"value"];
+//    
+//    return cell;
+//}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"ProfileCell";
-    
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }else{
-        //cell = [[TripsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-    }
-    NSDictionary *cellData = [data objectAtIndex:indexPath.row];
-    
-    int cellKey = [[cellData objectForKey:@"key"] intValue];
-    
-    UILabel *label1 = (UILabel *)[cell viewWithTag:50];
-    label1.text = [cellData objectForKey:@"label"];
-
-    UILabel *label2 = (UILabel *)[cell viewWithTag:51];
-    if(cellKey == USER_PROFILE_PASSWORD){
-        label2.text = @"********";
-    }else
-        label2.text = [cellData objectForKey:@"value"];
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //NSDictionary *cellData = [data objectAtIndex:indexPath.row];
-    
-    [self performSegueWithIdentifier:@"ShowProfileChange" sender:self];
-    
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    //NSDictionary *cellData = [data objectAtIndex:indexPath.row];
+//    
+//    [self performSegueWithIdentifier:@"ShowProfileChange" sender:self];
+//    
+//}
 
 @end

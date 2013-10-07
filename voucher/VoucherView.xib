@@ -63,7 +63,6 @@
 								<string key="NSFrame">{{20, 53}, {80, 80}}</string>
 								<reference key="NSSuperview" ref="418950481"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -89,13 +88,14 @@
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="58961451">
+								<int key="IBUITextAlignment">1</int>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
-									<double key="pointSize">14</double>
+									<double key="pointSize">18</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="263231365">
+								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica</string>
-									<double key="NSSize">14</double>
+									<double key="NSSize">18</double>
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
@@ -120,8 +120,15 @@
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="58961451"/>
-								<reference key="IBUIFont" ref="263231365"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<int key="type">1</int>
+									<double key="pointSize">14</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica</string>
+									<double key="NSSize">14</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUITextView" id="18909315">
@@ -1486,11 +1493,16 @@
 					<string key="className">VoucherView</string>
 					<string key="superclassName">UIView</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="favouriteClick:">id</string>
 						<string key="mapClick:">id</string>
 						<string key="redeemClick:">id</string>
 						<string key="shareClick:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="favouriteClick:">
+							<string key="name">favouriteClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="mapClick:">
 							<string key="name">mapClick:</string>
 							<string key="candidateClassName">id</string>
@@ -1507,7 +1519,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="closeButton">UIImageView</string>
 						<string key="description">UITextView</string>
-						<string key="favouriteButton">UIImageView</string>
+						<string key="favouriteButton">UIButton</string>
 						<string key="merchantLogo">UIImageView</string>
 						<string key="merchantName">UILabel</string>
 						<string key="redeemBut">UIButton</string>
@@ -1525,7 +1537,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="favouriteButton">
 							<string key="name">favouriteButton</string>
-							<string key="candidateClassName">UIImageView</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="merchantLogo">
 							<string key="name">merchantLogo</string>
@@ -1560,7 +1572,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="close.png">{128, 128}</string>
+			<string key="close.png">{24, 24}</string>
 			<string key="favourite_dis.png">{16, 16}</string>
 			<string key="pos.jpeg">{32, 32}</string>
 			<string key="share.png">{25, 19}</string>
