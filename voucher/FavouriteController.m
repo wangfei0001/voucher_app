@@ -90,6 +90,10 @@
     
     cell.voucherName.text = [voucherData objectForKey:@"name"];
     
+    cell.merchantId = [[[voucherData objectForKey:@"merchant"] objectForKey:@"id_merchant"] intValue];
+    
+    cell.delegate = self;
+    
     return cell;
 }
 

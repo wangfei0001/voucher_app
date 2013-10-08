@@ -8,8 +8,16 @@
 
 #import "CategoryController.h"
 
+#import "AppDelegate.h"
+
+#import "Category.h"
+
+#import "UIImageView+AFNetworking.h"
+
 @interface CategoryController (){
     int selectedRow;
+    
+    AppDelegate *appDelegate;
 }
 
 @end
@@ -31,6 +39,8 @@
 	// Do any additional setup after loading the view.
     
     selectedRow = -1;
+    
+    appDelegate = APP_DELEGATE;
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +65,17 @@
         
     }
     
+    Category *cat = [appDelegate.global.categories objectAtIndex:indexPath.row];
+    
+    UILabel *lblCatName = (UILabel *)[cell viewWithTag:50];     //title
+    lblCatName.text = cat.name;
+    
+    
+    UIImageView *imgCat = (UIImageView *)[cell viewWithTag:51];
+    NSURL *url = [NSURL URLWithString:@"http://voucher/uploads/logo/1.jpeg"];
+    
+    [imgCat setImageWithURL:url];
+    
 //    id voucherData = [data objectAtIndex:indexPath.row];
 //    
 //    cell.merchantName.text = [[voucherData objectForKey:@"merchant"] objectForKey:@"company"];
@@ -65,7 +86,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return [appDelegate.global.categories count];
 }
 
 

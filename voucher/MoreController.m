@@ -80,11 +80,15 @@
 //    return cell;
 //}
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSString *segueID = [dataController objectAtIndex:indexPath.row];
-//
-//    [self performSegueWithIdentifier:segueID sender:self];
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //NSString *segueID = [dataController objectAtIndex:indexPath.row];
+
+    if(indexPath.row == 1){ //检测版本
+        
+        
+        
+    }
+}
 
 @end

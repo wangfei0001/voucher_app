@@ -8,7 +8,13 @@
 
 #import "ChangePwdController.h"
 
-@interface ChangePwdController ()
+#import "AppDelegate.h"
+
+@interface ChangePwdController (){
+    
+    AppDelegate *appDelegate;
+    
+}
 
 @end
 
@@ -35,6 +41,9 @@
     
     self.tableView.backgroundView = nil;
     [self.tableView setBackgroundColor:[UIColor colorWithRed:(220/255.0) green:(220/255.0) blue:(220/255.0) alpha:1]];
+    
+    
+    appDelegate = APP_DELEGATE;
 }
 
 - (void)didReceiveMemoryWarning
@@ -97,5 +106,40 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+
+/***
+ * Validate the form
+ *
+ */
+- (BOOL)validate
+{
+    BOOL result = YES;
+//    if([self.txtValue.text isEqualToString:@""]){
+//        
+//        [appDelegate showAlert:[NSString stringWithFormat:@"请输入您的辑%@", fieldName]];
+//        [self.txtValue becomeFirstResponder];
+//        result = NO;
+//    }
+    
+    
+    return result;
+}
+
+
+- (IBAction)submitClick:(id)sender {
+    if(![self validate]){
+        
+        
+        return;
+    }
+    NSLog(@"ok, we submit now!");
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
+}
+
 
 @end

@@ -162,7 +162,12 @@
     
 }
 
-
+#pragma Voucher Cell delegate
+-(void)merchantClick: (id)sender merchantId: (int)merchantId
+{
+    NSLog(@"merchant id = %d", merchantId);
+    [self performSegueWithIdentifier:@"ShowMerchant" sender:self];
+}
 
 #pragma Voucher View delegate 
 

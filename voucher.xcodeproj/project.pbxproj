@@ -12,17 +12,16 @@
 		9E2673C317C7548900EFE754 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2673C217C7548900EFE754 /* BaseController.m */; };
 		9E2673C617C7583C00EFE754 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2673C517C7583C00EFE754 /* NavigationController.m */; };
 		9E2673C917C794AC00EFE754 /* MainTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E2673C817C794AC00EFE754 /* MainTable.m */; };
-		9E308EBF17FC59E200FE7917 /* ProfileChangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E308EBE17FC59E200FE7917 /* ProfileChangeController.m */; };
 		9E308EC117FC609300FE7917 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E308EC017FC609300FE7917 /* back.png */; };
 		9E308EC417FC61E900FE7917 /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E308EC217FC61E900FE7917 /* button_back.png */; };
 		9E308EC517FC61E900FE7917 /* button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E308EC317FC61E900FE7917 /* button_normal.png */; };
 		9E5872A517D14CAA006E948E /* TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872A417D14CAA006E948E /* TabController.m */; };
 		9E5872A817D14D57006E948E /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872A717D14D57006E948E /* LoginController.m */; };
 		9E5872AB17D14D63006E948E /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872AA17D14D63006E948E /* RegisterController.m */; };
-		9E5872AE17D20C54006E948E /* DefaultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5872AD17D20C54006E948E /* DefaultController.m */; };
 		9E75CD5917F5BDE2000F442E /* libTCWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E75CD5717F5BDE2000F442E /* libTCWeiboSDK.a */; };
 		9E872AF417FF6F1500B937D5 /* UIImage+FrColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E872AF317FF6F1500B937D5 /* UIImage+FrColor.m */; };
 		9E8F5E301802D1D300ADF4BF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8F5E2F1802D1D300ADF4BF /* User.m */; };
+		9E8F5E361802D5A500ADF4BF /* ChangeOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8F5E351802D5A500ADF4BF /* ChangeOtherController.m */; };
 		9E91EC3F17FE85D0006046D5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC3E17FE85D0006046D5 /* Settings.bundle */; };
 		9E91EC4F17FE904C006046D5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC4E17FE904C006046D5 /* Default.png */; };
 		9E91EC5117FE904F006046D5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E91EC5017FE904F006046D5 /* Default@2x.png */; };
@@ -99,6 +98,7 @@
 		9ECE26AA17DDE46C00FE735B /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26A917DDE46C00FE735B /* Session.m */; };
 		9ECE26AD17DDEDC100FE735B /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AC17DDEDC100FE735B /* AccountController.m */; };
 		9ECE26B017DDF05F00FE735B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECE26AF17DDF05F00FE735B /* MBProgressHUD.m */; };
+		9ED2390D180420E000DE8FE6 /* MerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2390C180420E000DE8FE6 /* MerchantController.m */; };
 		9EDD2C2A17DB49B900448616 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD2C2917DB49B900448616 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9EDF5BDF17F5A1F200E275EC /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EDF5BDC17F5A1F200E275EC /* libWeiboSDK.a */; };
 		9EDF5BE017F5A1F200E275EC /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF5BDD17F5A1F200E275EC /* WeiboSDK.bundle */; };
@@ -125,8 +125,6 @@
 		9E2673C517C7583C00EFE754 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		9E2673C717C794AC00EFE754 /* MainTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTable.h; sourceTree = "<group>"; };
 		9E2673C817C794AC00EFE754 /* MainTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTable.m; sourceTree = "<group>"; };
-		9E308EBD17FC59E200FE7917 /* ProfileChangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileChangeController.h; sourceTree = "<group>"; };
-		9E308EBE17FC59E200FE7917 /* ProfileChangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileChangeController.m; sourceTree = "<group>"; };
 		9E308EC017FC609300FE7917 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		9E308EC217FC61E900FE7917 /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
 		9E308EC317FC61E900FE7917 /* button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_normal.png; sourceTree = "<group>"; };
@@ -136,14 +134,14 @@
 		9E5872A717D14D57006E948E /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		9E5872A917D14D63006E948E /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
 		9E5872AA17D14D63006E948E /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
-		9E5872AC17D20C54006E948E /* DefaultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultController.h; sourceTree = "<group>"; };
-		9E5872AD17D20C54006E948E /* DefaultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultController.m; sourceTree = "<group>"; };
 		9E75CD5717F5BDE2000F442E /* libTCWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTCWeiboSDK.a; sourceTree = "<group>"; };
 		9E75CD5817F5BDE2000F442E /* WeiboApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboApi.h; sourceTree = "<group>"; };
 		9E872AF217FF6F1500B937D5 /* UIImage+FrColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FrColor.h"; sourceTree = "<group>"; };
 		9E872AF317FF6F1500B937D5 /* UIImage+FrColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FrColor.m"; sourceTree = "<group>"; };
 		9E8F5E2E1802D1D300ADF4BF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9E8F5E2F1802D1D300ADF4BF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		9E8F5E341802D5A500ADF4BF /* ChangeOtherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeOtherController.h; sourceTree = "<group>"; };
+		9E8F5E351802D5A500ADF4BF /* ChangeOtherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeOtherController.m; sourceTree = "<group>"; };
 		9E91EC3E17FE85D0006046D5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = voucher/Settings.bundle; sourceTree = "<group>"; };
 		9E91EC4E17FE904C006046D5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9E91EC5017FE904F006046D5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -263,6 +261,8 @@
 		9ECE26AC17DDEDC100FE735B /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountController.m; sourceTree = "<group>"; };
 		9ECE26AE17DDF05F00FE735B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		9ECE26AF17DDF05F00FE735B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		9ED2390B180420E000DE8FE6 /* MerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantController.h; sourceTree = "<group>"; };
+		9ED2390C180420E000DE8FE6 /* MerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantController.m; sourceTree = "<group>"; };
 		9EDD2C2817DB49B900448616 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		9EDD2C2917DB49B900448616 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		9EDF5BDC17F5A1F200E275EC /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
@@ -312,10 +312,10 @@
 				9E5872AA17D14D63006E948E /* RegisterController.m */,
 				9ECE26AB17DDEDC100FE735B /* AccountController.h */,
 				9ECE26AC17DDEDC100FE735B /* AccountController.m */,
-				9E308EBD17FC59E200FE7917 /* ProfileChangeController.h */,
-				9E308EBE17FC59E200FE7917 /* ProfileChangeController.m */,
 				9EB977E517FFEE74009F3289 /* ChangePwdController.h */,
 				9EB977E617FFEE75009F3289 /* ChangePwdController.m */,
+				9E8F5E341802D5A500ADF4BF /* ChangeOtherController.h */,
+				9E8F5E351802D5A500ADF4BF /* ChangeOtherController.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -544,12 +544,12 @@
 				9E2673C517C7583C00EFE754 /* NavigationController.m */,
 				9E5872A317D14CAA006E948E /* TabController.h */,
 				9E5872A417D14CAA006E948E /* TabController.m */,
-				9E5872AC17D20C54006E948E /* DefaultController.h */,
-				9E5872AD17D20C54006E948E /* DefaultController.m */,
 				9EBCFEFE17E85AFB0082D934 /* SearchController.h */,
 				9EBCFEFF17E85AFB0082D934 /* SearchController.m */,
 				9EA0F6A117FD919300E17791 /* CategoryController.h */,
 				9EA0F6A217FD919300E17791 /* CategoryController.m */,
+				9ED2390B180420E000DE8FE6 /* MerchantController.h */,
+				9ED2390C180420E000DE8FE6 /* MerchantController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -782,7 +782,6 @@
 				9E5872A517D14CAA006E948E /* TabController.m in Sources */,
 				9E5872A817D14D57006E948E /* LoginController.m in Sources */,
 				9E5872AB17D14D63006E948E /* RegisterController.m in Sources */,
-				9E5872AE17D20C54006E948E /* DefaultController.m in Sources */,
 				9E997AEB17D352F0001B2D71 /* PopSegue.m in Sources */,
 				9EDD2C2A17DB49B900448616 /* KeychainItemWrapper.m in Sources */,
 				9ECE26AA17DDE46C00FE735B /* Session.m in Sources */,
@@ -799,12 +798,13 @@
 				9EC5897717F9A9BD00B09C4D /* MoreController.m in Sources */,
 				9EABA58017FAD67E00E2C829 /* ContactController.m in Sources */,
 				9EABA58417FAF13B00E2C829 /* SettingsController.m in Sources */,
-				9E308EBF17FC59E200FE7917 /* ProfileChangeController.m in Sources */,
 				9EA0F6A317FD919300E17791 /* CategoryController.m in Sources */,
 				9E91EC5F17FEACC0006046D5 /* Button.m in Sources */,
 				9E872AF417FF6F1500B937D5 /* UIImage+FrColor.m in Sources */,
 				9EB977E717FFEE75009F3289 /* ChangePwdController.m in Sources */,
 				9E8F5E301802D1D300ADF4BF /* User.m in Sources */,
+				9E8F5E361802D5A500ADF4BF /* ChangeOtherController.m in Sources */,
+				9ED2390D180420E000DE8FE6 /* MerchantController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

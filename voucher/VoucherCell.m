@@ -47,8 +47,29 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
+    
+    //resize the merchant name label
+    CGFloat width =  [self.merchantName.text sizeWithFont:[UIFont systemFontOfSize:14 ]].width;
+    CGRect rect = self.merchantName.frame;
+    self.merchantName.frame = CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
+    
+    
     CGRect imageRectangle = CGRectMake(10,0.0f,300.0f,80.0f); //cells are 44 px high
     backgroundImage.frame = imageRectangle;
+}
+
+
+#pragma Touch Event
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = touches.anyObject;
+    
+    if(touch.view == self.merchantName){
+        [self.delegate merchantClick:self merchantId:self.merchantId];
+    }else{
+        [super touchesBegan:touches withEvent:event];
+    }
 }
 
 //cell.backgroundView = [ [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"cell_normal.png"] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0] ]autorelease];

@@ -16,12 +16,8 @@
 
 #import "User.h"
 
+#import "ChangeOtherController.h"
 
-#define USER_PROFILE_USERNAME       1
-
-#define USER_PROFILE_PASSWORD       2
-
-#define USER_PROFILE_EMAIL       3
 
 @interface AccountController (){
     
@@ -88,6 +84,13 @@
     appDelegate = APP_DELEGATE;
     
 
+
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [appDelegate ShowLoading:self.view];
     [Api getProfile:[Session userid] success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
         
@@ -113,12 +116,6 @@
         
         [appDelegate HideLoading];
     }];
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     //logout button
     if([Session isLogged]){
         UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"退出" style:UIBarButtonItemStylePlain target:self action:@selector(logoutClick:)];
@@ -189,5 +186,19 @@
 //    [self performSegueWithIdentifier:@"ShowProfileChange" sender:self];
 //    
 //}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"ShowChangeUsername"]){
+        
+        ChangeOtherController *vc = [segue destinationViewController];
+        
+        vc.changeType = USER_PROFILE_USERNAME;
+    }else if([segue.identifier isEqualToString:@"ShowChangeEmail"]){
+        ChangeOtherController *vc = [segue destinationViewController];
+        
+        vc.changeType = USER_PROFILE_EMAIL;
+    }
+}
 
 @end

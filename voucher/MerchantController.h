@@ -1,13 +1,13 @@
 //
-//  DefaultController.h
+//  MerchantController.h
 //  voucher
 //
-//  Created by fei wang on 13-8-31.
+//  Created by fei wang on 13-10-8.
 //  Copyright (c) 2013年 fei wang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface DefaultController : UIViewController
+@interface MerchantController : UIViewController
 
 @end

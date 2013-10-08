@@ -14,6 +14,8 @@
 
 #import "Session.h"
 
+#import "User.h"
+
 #import <CommonCrypto/CommonHMAC.h>
 
 
@@ -394,6 +396,49 @@
     [operation start];
     
 }
+
+
++ (void)saveProfile: (NSDictionary *)params
+            success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success
+{
+
+    AFHTTPClient *httpClient = [self getHttpClient];
+    
+    NSString *path = [NSString stringWithFormat:@"user/%d", [Session userid]];
+    
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"PUT" path:path parameters:params];
+    /*
+     Add HMAC authorization
+     */
+    [self addHttpAuth:httpClient request:request];
+    
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+        success:^(NSURLRequest *request , NSURLResponse *response , id json) {
+            NSLog(@"%@",json);
+            
+            BOOL status = [[json valueForKey:@"status"] boolValue];
+            if (status) {
+                success(request, response, [json valueForKey:@"data"]);
+            }
+            else {
+                UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Login Unsuccessful"
+                                                               message:@"Please try again"
+                                                              delegate:NULL
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:NULL];
+                
+                [alert show];
+                
+            }
+            
+        }
+        failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON) {
+            [self failure:request response:response error:error JSON:JSON];
+        }];
+    [operation start];
+}
+
 
 
 + (void)getProfile: (int)userid

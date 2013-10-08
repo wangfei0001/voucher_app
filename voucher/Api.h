@@ -39,6 +39,8 @@
         email: (NSString *)email
         password: (NSString *)password
         success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
++ (void)saveProfile: (NSDictionary *)params
+            success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 + (void)getProfile: (int)userid
         success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 

@@ -12,9 +12,12 @@
 
 #import "VoucherView.h"
 
+#import "VoucherCell.h"
+
 #import "Api.h"
 
 @interface BaseController : UIViewController<voucherViewDelegate,
+voucherCellViewDelegate,
 UIActionSheetDelegate,
 WeiboRequestDelegate,
 WeiboAuthDelegate
