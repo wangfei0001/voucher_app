@@ -15,9 +15,9 @@
 
 @interface VoucherController (){
     
-    NSMutableArray *data;     //voucher data
     
-    id selectedVoucher;
+    
+    
     
     UIRefreshControl *refreshControl;
     
@@ -74,14 +74,14 @@
     [self.mainTable addSubview:refreshControl];
     
         
-    data = [[NSMutableArray alloc] initWithCapacity:0];
+    
     
     [self.appDelegate ShowLoading:self.view];
     
     [Api getVouchers:nil success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
         //update the voucher views
         for(id val in JSON){
-            [data addObject:val];
+            [self.data addObject:val];
         }
         
         [self.mainTable reloadData];
@@ -98,53 +98,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-#pragma mark - Table View Start
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"VoucherCell";
-    
-    VoucherCell *cell = (VoucherCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }else{
-        //cell = [[TripsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-    }
-    
-    id voucherData = [data objectAtIndex:indexPath.row];
-    
-    cell.merchantName.text = [[voucherData objectForKey:@"merchant"] objectForKey:@"company"];
-    
-    cell.voucherName.text = [voucherData objectForKey:@"name"];
-    
-    cell.merchantId = [[[voucherData objectForKey:@"merchant"] objectForKey:@"id_merchant"] intValue];
-    
-    cell.delegate = self;
-    
-    return cell;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [data count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //we need to fill the data
-    selectedVoucher = [data objectAtIndex:indexPath.row];
-    
-    [self showVoucherView: selectedVoucher];
-    
-    self.voucherView.delegate = self;
 }
 
 #pragma mark - Some event handle functions
@@ -215,9 +168,9 @@
 {
     CLLocationCoordinate2D location;
     
-    for (int i = 0; i<[data count]; i++)
+    for (int i = 0; i<[self.data count]; i++)
     {
-        id merchant = [[data objectAtIndex:i] objectForKey:@"merchant"];
+        id merchant = [[self.data objectAtIndex:i] objectForKey:@"merchant"];
         
         id addresses = [merchant objectForKey:@"address"];
         
@@ -231,7 +184,7 @@
             location.longitude = double_long;
             
             MapPin *mapPoint = [[MapPin alloc] initWithLocation:location];
-            mapPoint.title = [[data objectAtIndex:i] objectForKey:@"name"];
+            mapPoint.title = [[self.data objectAtIndex:i] objectForKey:@"name"];
             mapPoint.subtitle = [merchant valueForKey:@"company"];
             mapPoint.nTag = i;
             
@@ -277,7 +230,7 @@
 {
     NSLog(@"click on map");
     //we need to fill the data
-    id voucherData = [data objectAtIndex:0];
+    id voucherData = [self.data objectAtIndex:0];
     
     NSLog(@"%@", voucherData);
     
@@ -309,9 +262,9 @@
     [self hideNotFound];
     [Api getVouchers:parameters success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
         //update the voucher views
-        [data removeAllObjects];
+        [self.data removeAllObjects];
         for(id val in JSON){
-            [data addObject:val];
+            [self.data addObject:val];
         }
         
         [self.mainTable reloadData];
@@ -320,7 +273,7 @@
         [self updateMapView];
         
         [self.mainTable scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
-        if([data count] <= 0){
+        if([self.data count] <= 0){
             [self showNotFound];
         }
         [self.appDelegate HideLoading];

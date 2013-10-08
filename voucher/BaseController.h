@@ -29,6 +29,9 @@ WeiboAuthDelegate
 
 @property (weak, nonatomic) IBOutlet UITableView *mainTable;
 
+
+@property (strong, nonatomic) NSMutableArray *data;     //voucher data
+
 - (void)showVoucherView: (id)data;
 
 - (void)showNotFound;

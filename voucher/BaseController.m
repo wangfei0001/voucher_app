@@ -22,6 +22,8 @@
     Voucher *voucher;
     
     UIImageView *notFoundImageView;
+    
+    id selectedVoucher;
 
 }
 
@@ -48,6 +50,8 @@
     self.appDelegate = APP_DELEGATE;
     
     voucherViewMoving = NO;
+    
+    self.data = [[NSMutableArray alloc] initWithCapacity:0];
 
 }
 
@@ -161,6 +165,56 @@
     }
     
 }
+
+#pragma Table View Start
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"VoucherCell";
+    
+    VoucherCell *cell = (VoucherCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }else{
+        //cell = [[TripsViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+    }
+    
+    id voucherData = [self.data objectAtIndex:indexPath.row];
+    
+    cell.merchantName.text = [[voucherData objectForKey:@"merchant"] objectForKey:@"company"];
+    
+    cell.voucherName.text = [voucherData objectForKey:@"name"];
+    
+    cell.merchantId = [[[voucherData objectForKey:@"merchant"] objectForKey:@"id_merchant"] intValue];
+    
+    cell.delegate = self;
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.data count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
+
+
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //we need to fill the data
+    selectedVoucher = [self.data objectAtIndex:indexPath.row];
+    
+    [self showVoucherView: selectedVoucher];
+    
+    self.voucherView.delegate = self;
+}
+
 
 #pragma Voucher Cell delegate
 -(void)merchantClick: (id)sender merchantId: (int)merchantId
