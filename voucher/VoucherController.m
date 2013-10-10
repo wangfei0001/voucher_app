@@ -172,7 +172,7 @@
     {
         id merchant = [[self.data objectAtIndex:i] objectForKey:@"merchant"];
         
-        id addresses = [merchant objectForKey:@"address"];
+        id addresses = [[self.data objectAtIndex:i] objectForKey:@"addresses"];
         
         //we support multiple stores
         for(int j = 0; j < [addresses count]; j++){

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Merchant;
+
 @interface MerchantController : UIViewController
+
+@property (retain, nonatomic) Merchant *merchant;
 
 @end
