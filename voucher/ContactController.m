@@ -12,6 +12,8 @@
 
 #import "AppDelegate.h"
 
+#import "Api.h"
+
 @interface ContactController (){
 
     AppDelegate *appDelegate;
@@ -76,6 +78,14 @@
 - (IBAction)submitClick:(id)sender {
     
     [appDelegate ShowLoading:self.view];
+    
+    [Api contact:self.txtContent.text contact:self.txtContact.text success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+        
+        [appDelegate showAlert:@"感谢您的帮助，我们的工作人员会尽快审理您的意见和建议。"];
+        
+        [appDelegate HideLoading];
+    }];
+    
     
     
 }

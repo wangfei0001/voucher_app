@@ -509,6 +509,51 @@
     [operation start];
 }
 
+#pragma mark - 无关紧要的api
+
+
++ (void)contact: (NSString *)content
+        contact: (NSString *)contact
+       success : (void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success
+{
+    AFHTTPClient *httpClient = [self getHttpClient];
+    
+    NSString *path = [NSString stringWithFormat:@"contact/"];
+    
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                content,
+                                @"content",
+                                contact,
+                                @"contact_info",
+                                nil];
+    
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:path parameters:parameters];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+        success:^(NSURLRequest *request , NSURLResponse *response , id json) {
+            
+            BOOL status = [[json valueForKey:@"status"] boolValue];
+            if (status) {
+                success(request, response, [json valueForKey:@"data"]);
+            }
+            else {
+                UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Login Unsuccessful"
+                                                               message:@"Please try again"
+                                                              delegate:NULL
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:NULL];
+                
+                [alert show];
+                
+            }
+            
+        }
+        failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON) {
+            [self failure:request response:response error:error JSON:JSON];
+        }];
+    [operation start];
+}
+
 #pragma mark - 通用方法
 
 /***

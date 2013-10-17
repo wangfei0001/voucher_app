@@ -48,4 +48,8 @@
 
 + (void)getCategories:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 
++ (void)contact: (NSString *)content
+        contact: (NSString *)contact
+       success : (void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
 @end
