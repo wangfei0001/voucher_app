@@ -24,6 +24,8 @@
     UIImageView *notFoundImageView;
     
     id selectedVoucher;
+    
+    UIAlertView *alert;
 
 }
 
@@ -68,6 +70,7 @@
 - (void)fillData: (id)data
 {
     voucher = [[Voucher alloc] initWithData:data];
+
     
     id merchant = [data objectForKey:@"merchant"];
     
@@ -89,8 +92,12 @@
                   success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
                       
                       //update UI
+
+                      [voucher loadData:JSON];
                       if(!voucher.reusable){
                           self.voucherView.redeemBut.hidden = NO;
+                      }else{
+                          self.voucherView.redeemBut.hidden = YES;
                       }
                   }];
 }
@@ -261,11 +268,42 @@
     [self performSegueWithIdentifier:@"ShowMerchantOnMap" sender:self];
 }
 
+
+
+
+
+/*
+ * Redeem the voucher
+ */
 - (void)redeemVoucherClick:(id)sender
 {
-    NSLog(@"test");
+    if(![Session isLogged]){
+        
+        
+        alert =[[UIAlertView alloc] initWithTitle:@"请登录"
+                                                   message:@"请登录后使用该优惠券"
+                                                  delegate:NULL
+                                         cancelButtonTitle:@"确定"
+                                         otherButtonTitles:@"取消",
+                                            nil];
+        alert.delegate = self;
+        [alert show];
+        
+        return;
+    }
+    
+    [self.appDelegate ShowLoading:self.voucherView];
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [self.tabBarController performSegueWithIdentifier:@"ShowLoginRegister" sender:self];
+    }
+    else {
+        NSLog(@"user pressed Cancel");
+    }
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

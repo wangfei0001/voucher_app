@@ -75,6 +75,9 @@
 }
 
 
+/***
+ * 提交意见和建议
+ **/
 - (IBAction)submitClick:(id)sender {
     
     [appDelegate ShowLoading:self.view];

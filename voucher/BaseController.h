@@ -20,7 +20,8 @@
 voucherCellViewDelegate,
 UIActionSheetDelegate,
 WeiboRequestDelegate,
-WeiboAuthDelegate
+WeiboAuthDelegate,
+UIAlertViewDelegate
 >
 
 @property (nonatomic, weak) AppDelegate *appDelegate;

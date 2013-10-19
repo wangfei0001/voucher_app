@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[VoucherController showCategories]:VoucherController.m">
+      </ContextState>
+      <ContextState
          contextName = "__24-[Global initCategories]_block_invoke:Global.m">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +14,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[VoucherController showCategories]:VoucherController.m">
+         contextName = "__copy_helper_block_:Global.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cats">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[CategoryView initWithCoder:]:CategoryView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[BaseController fillData:]:BaseController.m">
       </ContextState>
       <ContextState
          contextName = "-[VoucherController viewDidLoad]:VoucherController.m">
@@ -25,10 +36,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__copy_helper_block_:Global.m">
+         contextName = "__27-[BaseController fillData:]_block_invoke:BaseController.m">
          <PersistentStrings>
             <PersistentString
-               value = "cats">
+               value = "voucher">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
