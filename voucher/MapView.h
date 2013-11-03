@@ -26,6 +26,10 @@
 
 //- (void)setLocation: (CLLocationCoordinate2D) startCoord;
 
+- (void)addPin: (NSString *)title
+            subTitle: (NSString *)subTitle
+            lat: (double)lat
+           lng: (double)lng;
 
 @property (nonatomic, assign) id<mapViewDelegate> mydelegate;
 

@@ -38,8 +38,20 @@
     
     self.id_favourite = [[data objectForKey:@"id_favourite"] intValue];
     
+    //init merchant
     if([data objectForKey:@"merchant"]){
         self.merchant = [[Merchant alloc] initWithData:[data objectForKey:@"merchant"]];
+    }
+    //init vouchers
+    id addresses = [data objectForKey:@"addresses"];
+    if(addresses){
+        //address
+        self.addresses = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for(int i = 0; i < [addresses count]; i++){
+            Address *address = [[Address alloc] initWithData:[addresses objectAtIndex:i]];
+            [self.addresses addObject:address];
+        }
     }
 }
 

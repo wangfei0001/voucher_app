@@ -172,8 +172,48 @@
  ***/
 + (void)redeemVoucher: (int)voucherId
                  uuid: (NSString *)uuid
+                success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success
 {
+    AFHTTPClient *httpClient = [self getHttpClient];
     
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:voucherId],
+                                @"id_voucher",
+                                [NSString stringWithFormat:@"%d", [Session userid]],
+                                @"id_user",
+                                @"uuid",
+                                @"uuid",
+                                nil];
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"redeem" parameters:parameters];
+    
+    /*
+     Add HMAC authorization
+     */
+    [self addHttpAuth:httpClient request:request];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+        success:^(NSURLRequest *request , NSURLResponse *response , id json) {
+            
+            NSLog(@"%@", json);
+            
+            BOOL status = [[json valueForKey:@"status"] boolValue];
+            if (status) {
+                success(request, response, [json valueForKey:@"data"]);
+            }
+            else {
+                UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Login Unsuccessful"
+                                                               message:[json valueForKey:@"message"]
+                                                              delegate:NULL
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:NULL];
+                
+                [alert show];
+            }
+            
+        }
+        failure:^(NSURLRequest *request , NSURLResponse *response , NSError *error , id JSON) {
+            [self failure:request response:response error:error JSON:JSON];
+        }];
+    [operation start];
 }
 
 

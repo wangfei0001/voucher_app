@@ -8,6 +8,8 @@
 
 #import "MapView.h"
 
+#import "MapPin.h"
+
 #import <MapKit/MKPinAnnotationView.h>
 
 
@@ -125,6 +127,25 @@
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
 {
     
+}
+
+- (void)addPin: (NSString *)title
+            subTitle: (NSString *)subTitle
+            lat: (double)lat
+            lng: (double)lng
+{
+    CLLocationCoordinate2D location;
+    
+
+    location.latitude = lat;
+    location.longitude = lng;
+    
+    MapPin *mapPoint = [[MapPin alloc] initWithLocation:location];
+    mapPoint.title = title;
+    mapPoint.subtitle = subTitle;
+    //mapPoint.nTag = i;
+    
+    [self addAnnotation:mapPoint];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation

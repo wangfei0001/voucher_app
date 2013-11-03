@@ -39,9 +39,6 @@
     
     self.mapView.showsUserLocation = YES;
     
-//    [self.mapView setLocation: self.startCoord];
-    
-    //CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake(-33.833695 , 151.221533 );;
     CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
     CGRect rect = CGRectMake(0, 0, 320, appDelegate.window.frame.size.height - tabBarHeight);
     
@@ -49,6 +46,13 @@
     
     [self.mapView setCenterCoordinate:self.startCoord zoomLevel:14 animated:NO];
 
+    if(self.showType == MAP_CONTROLLER_SHOW_TYPE_VOUCHER){
+        for(int i = 0; i < self.voucher.addresses.count; i++){
+            Address *address = (Address *)[self.voucher.addresses objectAtIndex:i];
+
+            [self.mapView addPin:self.voucher.name subTitle:self.voucher.merchant.company lat:address.lat lng:address.lng];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

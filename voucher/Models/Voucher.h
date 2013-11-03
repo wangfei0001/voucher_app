@@ -30,6 +30,7 @@
 
 @property (retain, nonatomic) Merchant *merchant;
 
+@property (retain, nonatomic) NSMutableArray *addresses;
 
 /*
  * 虚拟属性

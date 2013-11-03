@@ -15,7 +15,9 @@
 + (void)getVoucherDetail: (int)voucherId
                  success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 + (void)redeemVoucher: (int)voucherId
-                 uuid: (NSString *)uuid;
+                 uuid: (NSString *)uuid
+              success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
+
 + (void)getMyFavouriteVouchers: (NSDictionary *)params
                        success:(void (^)(NSURLRequest *request, NSURLResponse *response, id JSON))success;
 

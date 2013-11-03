@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/MapView.m"
-         timestampString = "399472898.935183"
+         timestampString = "403954524.022029"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-mapView:didUpdateUserLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
+         timestampString = "403954828.227185"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
          landmarkName = "-initMapView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/MapView.m"
-         timestampString = "400775237.234619"
+         timestampString = "403954524.022029"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "126"
-         endingLineNumber = "126"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-mapView:didDeselectAnnotationView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
+         timestampString = "403954828.227185"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "300"
-         endingLineNumber = "300"
+         startingLineNumber = "286"
+         endingLineNumber = "286"
          landmarkName = "-refreshLatestVouchersDone"
          landmarkType = "5">
       </FileBreakpoint>
@@ -221,7 +221,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "265"
          endingLineNumber = "265"
-         landmarkName = "+removeFavouriteVocher:success:"
+         landmarkName = "+addFavouriteVocher:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -234,7 +234,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "276"
          endingLineNumber = "276"
-         landmarkName = "+login:password:success:"
+         landmarkName = "+removeFavouriteVocher:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -325,8 +325,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "316"
          endingLineNumber = "316"
-         landmarkName = "@implementation Api"
-         landmarkType = "3">
+         landmarkName = "+login:password:success:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -338,7 +338,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "306"
          endingLineNumber = "306"
-         landmarkName = "+login:password:success:"
+         landmarkName = "+removeFavouriteVocher:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -351,8 +351,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "313"
          endingLineNumber = "313"
-         landmarkName = "+login:password:success:"
-         landmarkType = "5">
+         landmarkName = "@implementation Api"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -364,8 +364,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "311"
          endingLineNumber = "311"
-         landmarkName = "+login:password:success:"
-         landmarkType = "5">
+         landmarkName = "@implementation Api"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -416,7 +416,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "359"
          endingLineNumber = "359"
-         landmarkName = "+signup:email:password:success:"
+         landmarkName = "+logout:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -489,11 +489,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
+         timestampString = "403951204.114775"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "113"
-         endingLineNumber = "113"
+         startingLineNumber = "112"
+         endingLineNumber = "112"
          landmarkName = "-showVoucherView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -502,11 +502,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
+         timestampString = "403951204.114775"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-showVoucherView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -566,19 +566,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "252"
-         endingLineNumber = "252"
-         landmarkName = "-favouriteClick:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "voucher/VoucherView.m"
          timestampString = "401893168.10712"
          startingColumnNumber = "9223372036854775807"
@@ -611,7 +598,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "187"
          endingLineNumber = "187"
-         landmarkName = "+addFavouriteVocher:success:"
+         landmarkName = "+redeemVoucher:uuid:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -650,7 +637,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "591"
          endingLineNumber = "591"
-         landmarkName = "+hmacForKeyAndData:key:"
+         landmarkName = "+contact:contact:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -658,24 +645,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
+         timestampString = "403951204.114775"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "249"
          endingLineNumber = "249"
-         landmarkName = "-favouriteClick:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "260"
-         endingLineNumber = "260"
          landmarkName = "-favouriteClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -689,20 +663,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "234"
          endingLineNumber = "234"
-         landmarkName = "+removeFavouriteVocher:success:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
-         landmarkName = "-updateMapView"
+         landmarkName = "+addFavouriteVocher:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -710,12 +671,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403875029.733232"
+         timestampString = "405089067.504382"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "311"
-         endingLineNumber = "311"
-         landmarkName = "-prepareForSegue:sender:"
+         startingLineNumber = "322"
+         endingLineNumber = "322"
+         landmarkName = "-alertView:clickedButtonAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -723,11 +684,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/MapView.m"
-         timestampString = "400776023.535913"
+         timestampString = "403954524.022029"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
          landmarkName = "-setCenterCoordinate:zoomLevel:animated:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -736,11 +697,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/Models/Voucher.m"
-         timestampString = "400777250.133699"
+         timestampString = "403949101.106541"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "-loadData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -755,19 +716,6 @@
          startingLineNumber = "17"
          endingLineNumber = "17"
          landmarkName = "-initWithData:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
-         landmarkName = "-updateMapView"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1038,7 +986,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "480"
          endingLineNumber = "480"
-         landmarkName = "+getCategories:"
+         landmarkName = "+saveProfile:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1051,7 +999,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "487"
          endingLineNumber = "487"
-         landmarkName = "+getCategories:"
+         landmarkName = "+getProfile:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1278,11 +1226,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
+         timestampString = "403954828.227185"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "274"
-         endingLineNumber = "274"
+         startingLineNumber = "260"
+         endingLineNumber = "260"
          landmarkName = "-categoryClick:selectedCat:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1291,11 +1239,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
+         timestampString = "403954828.227185"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "266"
-         endingLineNumber = "266"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
          landmarkName = "-categoryClick:selectedCat:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1304,11 +1252,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
+         timestampString = "403951204.114775"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "237"
-         endingLineNumber = "237"
+         startingLineNumber = "236"
+         endingLineNumber = "236"
          landmarkName = "-shareClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1317,11 +1265,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
+         timestampString = "403951204.114775"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "151"
-         endingLineNumber = "151"
+         startingLineNumber = "150"
+         endingLineNumber = "150"
          landmarkName = "-actionSheet:clickedButtonAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1395,11 +1343,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
+         timestampString = "403954828.227185"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "255"
-         endingLineNumber = "255"
+         startingLineNumber = "241"
+         endingLineNumber = "241"
          landmarkName = "-categoryClick:selectedCat:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1408,11 +1356,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/VoucherController.m"
-         timestampString = "402925578.63432"
+         timestampString = "403954828.227185"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "270"
-         endingLineNumber = "270"
+         startingLineNumber = "256"
+         endingLineNumber = "256"
          landmarkName = "-categoryClick:selectedCat:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1634,7 +1582,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "455"
          endingLineNumber = "455"
-         landmarkName = "+getProfile:success:"
+         landmarkName = "+saveProfile:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1660,7 +1608,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "420"
          endingLineNumber = "420"
-         landmarkName = "+saveProfile:success:"
+         landmarkName = "+signup:email:password:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1673,7 +1621,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "437"
          endingLineNumber = "437"
-         landmarkName = "+saveProfile:success:"
+         landmarkName = "+signup:email:password:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1686,7 +1634,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "425"
          endingLineNumber = "425"
-         landmarkName = "+saveProfile:success:"
+         landmarkName = "+signup:email:password:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1699,7 +1647,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "409"
          endingLineNumber = "409"
-         landmarkName = "+saveProfile:success:"
+         landmarkName = "+signup:email:password:success:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1785,7 +1733,20 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
+         timestampString = "403951204.114775"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
+         landmarkName = "-fillData:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/BaseController.m"
+         timestampString = "403951204.114775"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "96"
@@ -1798,12 +1759,142 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "voucher/BaseController.m"
-         timestampString = "403874729.891195"
+         timestampString = "403951204.114775"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
-         landmarkName = "-fillData:"
+         startingLineNumber = "269"
+         endingLineNumber = "269"
+         landmarkName = "-showMerchantOnMapClick:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/MapController.m"
+         timestampString = "403956546.426527"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/BaseController.m"
+         timestampString = "405089067.504382"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "323"
+         endingLineNumber = "323"
+         landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/BaseController.m"
+         timestampString = "405089067.504382"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "326"
+         endingLineNumber = "326"
+         landmarkName = "@implementation BaseController"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/MapController.m"
+         timestampString = "403956546.426527"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/Api.m"
+         timestampString = "405089026.114165"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
+         landmarkName = "+redeemVoucher:uuid:success:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/BaseController.m"
+         timestampString = "405089783.047895"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "310"
+         endingLineNumber = "310"
+         landmarkName = "-redeemVoucherClick:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/Api.m"
+         timestampString = "405089990.926693"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
+         landmarkName = "+redeemVoucher:uuid:success:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/Api.m"
+         timestampString = "405090116.311903"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "177"
+         endingLineNumber = "177"
+         landmarkName = "+redeemVoucher:uuid:success:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/Api.m"
+         timestampString = "405090166.898774"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "179"
+         endingLineNumber = "179"
+         landmarkName = "+redeemVoucher:uuid:success:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "voucher/BaseController.m"
+         timestampString = "405090256.89741"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "305"
+         endingLineNumber = "305"
+         landmarkName = "-redeemVoucherClick:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

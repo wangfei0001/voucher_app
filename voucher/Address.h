@@ -12,9 +12,9 @@
 
 @interface Address : NSObject
 
-@property (assign, nonatomic) float lat;
+@property (assign, nonatomic) double lat;
 
-@property (assign, nonatomic) float lng;
+@property (assign, nonatomic) double lng;
 
 
 - (id)initWithData: (id)data;

@@ -20,9 +20,6 @@
 
 @property (assign, nonatomic) int id_merchant;
 
-
-@property (retain, nonatomic) NSMutableArray *addresses;
-
 - (id)initWithData: (id)data;
 
 

@@ -71,12 +71,11 @@
 {
     voucher = [[Voucher alloc] initWithData:data];
 
+    //id merchant = [data objectForKey:@"merchant"];
     
-    id merchant = [data objectForKey:@"merchant"];
+    self.voucherView.merchantName.text = voucher.merchant.company;
     
-    self.voucherView.merchantName.text = [merchant objectForKey:@"company"];
-    
-    self.voucherView.voucherTitle.text = [data objectForKey:@"name"];
+    self.voucherView.voucherTitle.text = voucher.name;
     
     NSURL *url = [NSURL URLWithString:@"http://voucher/uploads/logo/1.jpeg"];
     [self.voucherView.merchantLogo setImageWithURL:url placeholderImage:nil];
@@ -246,20 +245,22 @@
 
 -(void)favouriteClick: (id)sender
 {
+    if([self checkIfLogin]){
 
-    [self.appDelegate ShowLoading:self.voucherView];
-    if(![voucher isMyFavourite]){
-        [Api addFavouriteVocher:voucher.id success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
-            voucher.id_favourite = [JSON intValue];
-            [self.voucherView updateView:YES];
-            [self.appDelegate HideLoading];
-        }];
-    }else{
-        [Api removeFavouriteVocher:voucher.id_favourite success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
-            voucher.id_favourite = 0;
-            [self.voucherView updateView:NO];
-            [self.appDelegate HideLoading];
-        }];
+        [self.appDelegate ShowLoading:self.voucherView];
+        if(![voucher isMyFavourite]){
+            [Api addFavouriteVocher:voucher.id success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+                voucher.id_favourite = [JSON intValue];
+                [self.voucherView updateView:YES];
+                [self.appDelegate HideLoading];
+            }];
+        }else{
+            [Api removeFavouriteVocher:voucher.id_favourite success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+                voucher.id_favourite = 0;
+                [self.voucherView updateView:NO];
+                [self.appDelegate HideLoading];
+            }];
+        }
     }
 }
 
@@ -270,6 +271,25 @@
 
 
 
+- (BOOL)checkIfLogin
+{
+    if(![Session isLogged]){
+        
+        
+        alert =[[UIAlertView alloc] initWithTitle:@"请登录"
+                                          message:@"请登录后使用该优惠券"
+                                         delegate:NULL
+                                cancelButtonTitle:@"确定"
+                                otherButtonTitles:@"取消",
+                nil];
+        alert.delegate = self;
+        [alert show];
+        
+        return NO;
+    }
+    return YES;
+}
+
 
 
 /*
@@ -277,22 +297,21 @@
  */
 - (void)redeemVoucherClick:(id)sender
 {
-    if(![Session isLogged]){
+    if([self checkIfLogin]){
+        [self.appDelegate ShowLoading:self.voucherView];
+
+        NSUUID *oNSUUID = [[UIDevice currentDevice] identifierForVendor];
         
+        [Api redeemVoucher:voucher.id uuid:[oNSUUID UUIDString] success:^(NSURLRequest *request, NSURLResponse *response, id JSON) {
+            
+            self.voucherView.redeemBut.hidden = YES;
+            
+            
+            [self.appDelegate HideLoading];
+            
+        }];
         
-        alert =[[UIAlertView alloc] initWithTitle:@"请登录"
-                                                   message:@"请登录后使用该优惠券"
-                                                  delegate:NULL
-                                         cancelButtonTitle:@"确定"
-                                         otherButtonTitles:@"取消",
-                                            nil];
-        alert.delegate = self;
-        [alert show];
-        
-        return;
     }
-    
-    [self.appDelegate ShowLoading:self.voucherView];
 }
 
 
@@ -311,8 +330,11 @@
     {
         MapController *vc = [segue destinationViewController];
         
+        vc.startCoord = [[voucher.addresses objectAtIndex:0] getCoordinate2D];
+        vc.showType = MAP_CONTROLLER_SHOW_TYPE_VOUCHER;
+        vc.voucher = voucher;
         
-        vc.startCoord = [[voucher.merchant.addresses objectAtIndex:0] getCoordinate2D];
+
     }
 }
 
